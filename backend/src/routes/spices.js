@@ -1,14 +1,13 @@
 const { Router } = require('express');
 const router= Router();
 
-const Spice=require("../models/spice")
+const Spice=require("../models/spice");
 // enrutador 
 router.get('/api/extractSpices',async (req,res)=>{
     const spices= await Spice.find();
     res.json({spices});
 });
-router.get('/api/generateSpices',async(req,res)=>{
-  
+router.post('/api/generateSpices',async(req,res)=>{
     await Spice.create({
         nameSpice:"perro",
         personality: "fidelidad",
