@@ -9,13 +9,13 @@ router.get('/api/extractSpices',async (req,res)=>{
 });
 router.post('/api/generateSpices',async(req,res)=>{
     await Spice.create({
-        nameSpice:"perro",
-        personality: "fidelidad",
-        space: 10,
-        economic_resources: 10,
-        time: true,
-        long_terms_plans: 5,
-        diseases:["terapia","invidente"]
+        nameSpice: req.body.nameSpice,
+        personality: req.body.personality,
+        space: req.body.space,
+        economic_resources: req.body.economic_resources,
+        time: req.body.time,
+        long_terms_plans: req.body.long_terms_plans,
+        diseases:req.body.diseases,
     });
     res.json({message:'especie creada con exito'});
 });

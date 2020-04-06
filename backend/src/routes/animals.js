@@ -5,6 +5,8 @@ const animals=require("../models/animal");
 //animales
 const dogModel= animals.dog;
 const catModel= animals.cat;
+const birdModel= animals.bird;
+const reptileModel= animals.reptile;
 //rutas para animales
 // perros
 router.get('/api/extractDogs',async(req,res)=>{
@@ -12,7 +14,7 @@ router.get('/api/extractDogs',async(req,res)=>{
     res.json({mensaje:"se extrageron con exito todos los perros",totalDogs});
 });
 router.post('/api/generateDog',async(req,res)=>{
-    console.log(req.body);
+
     const body = req.body;
    try {
     const newDog = await dogModel.create(body);
@@ -66,6 +68,74 @@ router.delete('/api/deleteCat/:id',async(req,res)=>{
             return res.json({message:"no se encontro el id",error});
         }
         res.json({message:"Se elimino la el gato con exito",catdelete});
+        
+    } catch (error) {
+        return res.json({
+            message: 'ocurrio un error',
+            error
+        });
+    }
+});
+// Bird
+router.get('/api/extractBirds',async(req,res)=>{
+    const totalBirds= await birdModel.find();
+    res.json({mensaje:"se extrageron con exito",totalBirds});
+});
+router.post('/api/generateBird',async(req,res)=>{
+   
+    const body = req.body;
+   try {
+    const newBird= await birdModel.create(body);
+    res.status(200).json(newBird);
+    
+   } catch (error) {
+       return res.status(500).json({
+           mensaje: "no se logro generar",
+       });
+   }
+});
+router.delete('/api/deleteBird/:id',async(req,res)=>{
+    const _id= req.params.id;
+    try {
+        const birdDelete = await birdModel.findByIdAndDelete({_id});
+        if(!birdDelete){
+            return res.json({message:"no se encontro el id",error});
+        }
+        res.json({message:"Se elimino con exito",birdDelete});
+        
+    } catch (error) {
+        return res.json({
+            message: 'ocurrio un error',
+            error
+        });
+    }
+});
+// Reptile
+router.get('/api/extractReptiles',async(req,res)=>{
+    const totalReptiles= await reptileModel.find();
+    res.json({mensaje:"se extrageron con exito todos los gatos",totalReptiles});
+});
+router.post('/api/generateReptile',async(req,res)=>{
+   
+    const body = req.body;
+   try {
+    const newReptile= await reptileModel.create(body);
+    res.status(200).json(newReptile);
+    
+   } catch (error) {
+       return res.status(500).json({
+           mensaje: "no se logro generar el gato",
+       });
+   }
+});
+router.delete('/api/deleteReptile/:id',async(req,res)=>{
+    const _id= req.params.id;
+    try {
+        const reptileDelete = await reptileModel.findByIdAndDelete({_id});
+        if(!reptileDelete){
+            return res.json({message:"no se encontro el id",error});
+        }
+        res.json({message:"Se elimino la el gato con exito",reptileDelete});
         
     } catch (error) {
         return res.json({
