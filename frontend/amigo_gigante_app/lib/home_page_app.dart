@@ -9,9 +9,29 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
-class HomePage extends StatelessWidget{
+class HomePageApp extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _HomePageApp();
+  }
+
+
+}
+class _HomePageApp extends State<HomePageApp>{
   SpeciesBloc speciesBloc;
   List<Question> questions= List<Question>();
+
+  void onPressedState(){
+    setState(() {
+      speciesBloc.createdQuestions().then((value){
+                      
+        questions.addAll(value);
+      });
+                    
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     speciesBloc=BlocProvider.of(context);
@@ -49,9 +69,8 @@ class HomePage extends StatelessWidget{
                              child: Text("Entendido"),
                              isDefaultAction: true,
                              onPressed: (){
-                               speciesBloc.createdQuestions().then((value){
-                                questions.addAll(value);
-                              });
+                                questions=[];
+                                onPressedState();
                                 Navigator.pop(context);
                                 Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>QuestionnarieSpecies(questions)));
                              },
@@ -63,12 +82,8 @@ class HomePage extends StatelessWidget{
                   }),
                   BlueButtonInk(text: "Cuestionario Animal", onPressed: ()=>{
                     
-                    speciesBloc.createdQuestions().then((value){
-                      
-                      questions.addAll(value);
-                    }),
-                    
-                    
+                    onPressedState(),
+                  
                   }),
                   BlueButtonInk(text: "Consulta Informacion", onPressed: ()=>{}),
                   BannerFundation(),
@@ -82,4 +97,8 @@ class HomePage extends StatelessWidget{
 
     );
   }
+
 }
+
+
+

@@ -6,6 +6,6 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
-app.use(require('./routes/spices'));
+app.use(require('./routes/species'));
 app.use(require('./routes/animals'));
 module.exports=app;

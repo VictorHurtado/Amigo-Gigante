@@ -1,0 +1,77 @@
+{
+    "questions":{
+        "1":"¿Para qué deseas adoptar uno de nuestros amigos?",
+        "2":"¿Dispones de espacio para brindarle comodidad a tu nuevo amigo?",
+        "3":"¿Dispones de tiempo? ¡Recuerda que es muy importante compartir!",
+        "4":"¿Tienes algunos planes a largo plazo? debes tener en cuenta que si tu respuesta es negativa significa que tus planes son a muy corto plazo ( - 3 años).",
+        "5":"Esta pregunta es un poco incómoda para nosotros, pero ¿Cuentas con recursos económicos?",
+        "6":"¿Como te gustaria un acompañante?",
+        "7":"¿Tu compañero debería ser...?"
+    },
+    "answers":{
+        "1":[
+            "a. Amor y Fidelidad",
+            "b. Compañia y Afecto",
+            "c. Inteligencia e Independencia",
+            "d. Belleza y excéntrico"
+        ],
+        "2":[
+            "True",
+            "False"    
+        ],
+        "3":[
+            "True",
+            "False"  
+        ],
+        "4":[
+            "True",
+            "False"  
+        ],
+        "5":[
+            "Solvencia Economica",
+            "Poca solvencia"  
+        ],
+        "6":[
+            "Grande",
+            "Pequeño"  
+        ],
+        "7":[
+            "Dependiente",
+            "autonomo"
+        ]
+
+    },
+    "weight":{
+        "1":[
+            1,
+            2,
+            3,
+            4
+        ],
+        "2":[
+           12,
+           34
+        ],
+        "3":[
+            13,
+            24
+        ],
+        "4":[
+            124,
+            3
+        ],
+        "5":[
+            124,
+            3
+        ],
+        "6":[
+            12,
+            34
+        ],
+        "7":[
+            14,
+            23
+        ]
+    }
+    
+}

@@ -1,14 +1,24 @@
 const { Router } = require('express');
 const router= Router();
 
-const Spice=require("../models/spice");
+const Specie=require("../models/specie");
 // enrutador 
-router.get('/api/extractSpices',async (req,res)=>{
-    const spices= await Spice.find();
+router.post('/api/species/analyzeSpecies',async(req,res)=>{
+    const body = req.body;
+    console.log(body.myResponses);
+    var responses = JSON.parse(body.myResponses);
+    console.log(responses);
+  
+    res.json(responses);
+    
+});
+router.get('/api/species/extractSpices',async (req,res)=>{
+    const spices= await Specie.find();
+    
     res.json({spices});
 });
-router.post('/api/generateSpices',async(req,res)=>{
-    await Spice.create({
+router.post('/api/species/generateSpices',async(req,res)=>{
+    await Specie.create({
         nameSpice: req.body.nameSpice,
         personality: req.body.personality,
         space: req.body.space,
@@ -19,10 +29,10 @@ router.post('/api/generateSpices',async(req,res)=>{
     });
     res.json({message:'especie creada con exito'});
 });
-router.delete('/api/deleteSpice/:id',async (req,res)=>{
+router.delete('/api/species/deleteSpice/:id',async (req,res)=>{
     const _id=req.params.id;
     try {
-        const spicedelete = await Spice.findByIdAndDelete({_id});
+        const spicedelete = await Specie.findByIdAndDelete({_id});
         if(!spicedelete){
             return res.json({message:"no se encontro el id",error});
         }

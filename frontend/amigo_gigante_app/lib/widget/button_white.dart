@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 class ButtonWhite extends StatefulWidget{
   final String text;
+  final double width;
   final VoidCallback onPressed;
-  const ButtonWhite({Key key, this.text, this.onPressed});
+ 
+   ButtonWhite({Key key, this.text, this.onPressed,this.width});
 
   @override
   State<StatefulWidget> createState() {
@@ -17,17 +19,19 @@ class ButtonWhite extends StatefulWidget{
 }
 
 class _ButtonWhite extends State<ButtonWhite>{
- 
-
+  
+  
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Container(
+      width: widget.width,
       height: 50,
       margin: EdgeInsets.symmetric(
-        horizontal:20,
+       
         vertical: 10
       ),
+      
       child: RaisedButton(
         onPressed: widget.onPressed,
         shape: RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
@@ -40,7 +44,7 @@ class _ButtonWhite extends State<ButtonWhite>{
               
             child: Text(widget.text,textAlign: TextAlign.left,) 
             
-            )
+        )
       )
     );
     

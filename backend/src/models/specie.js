@@ -1,6 +1,6 @@
 const {Schema, model}= require('mongoose');
 
-const spiceSchema= new Schema({
+const speciesSchema= new Schema({
     nameSpice:String,
     personality: String, 
     space: Number,
@@ -10,4 +10,4 @@ const spiceSchema= new Schema({
     diseases:[String],
 });
 
-module.exports= new model('Spice',spiceSchema);
+module.exports= new model('Spice',speciesSchema);
