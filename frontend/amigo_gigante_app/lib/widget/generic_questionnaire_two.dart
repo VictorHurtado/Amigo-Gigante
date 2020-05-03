@@ -36,12 +36,12 @@ class GenericQuestionnaireTwo extends StatelessWidget{
         left:40,
       ),
       child: Text(
-          title,
+          "${title}. Pregunta",
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black,),
         ),
     );
     final questionDescription= Container(
-      height: 200,
+      height: 150,
       width: width,
       
       child: Container(
@@ -82,8 +82,9 @@ class GenericQuestionnaireTwo extends StatelessWidget{
         questionTitle,
         questionDescription,
         Container(
-          margin: EdgeInsets.only(bottom: 100),
+          margin: EdgeInsets.only(top:50,bottom: 190),
           width: 350,
+          
           child:Row(
          
             mainAxisAlignment: MainAxisAlignment.center,

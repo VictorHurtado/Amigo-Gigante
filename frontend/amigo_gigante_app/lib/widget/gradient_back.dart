@@ -39,7 +39,7 @@ class GradientBack extends StatelessWidget {
       // ),
       child: FittedBox(
         fit: BoxFit.none,
-        alignment: Alignment(0.022,1.5),
+        alignment: Alignment(0.0020,1.5),
         child: Stack(
           children: <Widget>[
             Transform.rotate(

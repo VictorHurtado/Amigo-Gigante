@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class BlueButtonInk extends StatelessWidget{
   final String text;
   final VoidCallback onPressed;
-  BlueButtonInk({Key key,@required this.text,@required this.onPressed});
+  final double width;
+  BlueButtonInk({Key key,@required this.text,@required this.onPressed,@required this.width});
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -11,13 +12,13 @@ class BlueButtonInk extends StatelessWidget{
      onTap: onPressed,
      child: Container(
        margin: EdgeInsets.only(
-         left: 20,
-         right: 20,
+         left: 10,
+         right: 10,
          top: 20,
          
        ),
        height: 70,
-       width: 250,
+       width: width,
        decoration: BoxDecoration(
          color: Color.fromRGBO(45, 235, 237, 1),
          borderRadius: BorderRadius.all(Radius.circular(10)),

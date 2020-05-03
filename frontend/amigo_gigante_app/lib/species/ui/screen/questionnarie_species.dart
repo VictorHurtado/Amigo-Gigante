@@ -3,6 +3,7 @@
 
 import 'package:amigo_gigante_app/species/bloc/species_bloc.dart';
 import 'package:amigo_gigante_app/species/model/question.dart';
+import 'package:amigo_gigante_app/species/ui/screen/results_species.dart';
 import 'package:amigo_gigante_app/widget/banner_fundation.dart';
 import 'package:amigo_gigante_app/widget/blue_circular_button.dart';
 import 'package:amigo_gigante_app/widget/generic_questionnaire_four.dart';
@@ -46,8 +47,9 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
 
   @override
   Widget build(BuildContext context) {
-    SpeciesBloc spiceBloc=BlocProvider.of(context);
+  
     double  width=MediaQuery.of(context).size.width;
+    
     
     // TODO: implement build
     return Scaffold(
@@ -116,11 +118,12 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
                         
                         },width: 130,),
                         BlueCircularButton(text: "Terminar", onPressed: (){
-                        spiceBloc.recomendSpecies();
-                        
+                          // Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>ResultsSpecies(title:"Resultados")));
+                          Navigator.popAndPushNamed(context, '/resultsSpecies');
                         },width: 130,),
                       ],
                     ),
+                  
                   ],
                 )
               ):

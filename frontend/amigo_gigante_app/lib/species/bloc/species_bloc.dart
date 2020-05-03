@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:charts_flutter/flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:amigo_gigante_app/species/model/question.dart';
 import 'package:amigo_gigante_app/species/repository/extract_questions_repository.dart';
@@ -25,13 +26,13 @@ class SpeciesBloc extends Bloc{
   }
   
   //enviar las respuestas al servidor
-  void recomendSpecies()async{
+  Future <String> recomendSpecies()async{
     String resp=jsonEncode(responses);
-    
+    await Future.delayed(Duration(seconds:5));
     http.Response jsonString= await _send_responses_repository.sendResponsesREST(resp);
-    print(jsonString.body);
+    
+    return jsonString.body;
   }
-  
   //guardar la respuesta
   void saveQuestion(String indexView,String response,int weightQuestion){ 
     var myResponse={
@@ -40,7 +41,13 @@ class SpeciesBloc extends Bloc{
     responses.addAll(myResponse);
     print("asi quedo el map: $responses");
   }
-
+  //retornar lista de respuesta
+  List<num> toDouble(String jsonString){
+    var jsonDecode= json.decode(jsonString);
+    
+    List<num> porcents = List<num>.from(jsonDecode);
+    return porcents;
+  }
   @override
   void dispose() {
     // TODO: implement dispose

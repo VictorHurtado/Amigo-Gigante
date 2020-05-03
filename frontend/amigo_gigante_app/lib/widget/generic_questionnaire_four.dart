@@ -36,7 +36,7 @@ class GenericQuestionnaireFour extends StatelessWidget{
         left:40,
       ),
       child: Text(
-          title,
+          "${title}. Pregunta",
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black,),
         ),
     );
@@ -58,7 +58,7 @@ class GenericQuestionnaireFour extends StatelessWidget{
               description,
               maxLines: 9,
               style: TextStyle(
-              fontSize:20.0,
+              fontSize:22.0,
               fontFamily: "Lato",
               color: Colors.black,
               fontWeight: FontWeight.w400 ,

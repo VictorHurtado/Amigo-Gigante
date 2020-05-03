@@ -25,6 +25,7 @@ dependencies:
   cupertino_icons: ^0.1.2
   generic_bloc_provider: ^1.0.9
   http: ^0.12.0+4
+  charts_flutter: ^0.9.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,6 +46,7 @@ flutter:
   assets:
    - assets/images/LOGO2.png
    - assets/resources/questions.json
+   - assets/images/Logo1.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

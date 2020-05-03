@@ -1,3 +1,4 @@
+import 'package:amigo_gigante_app/animals/ui/screens/animals_menu.dart';
 import 'package:amigo_gigante_app/species/bloc/species_bloc.dart';
 import 'package:amigo_gigante_app/species/model/question.dart';
 import 'package:amigo_gigante_app/species/ui/screen/questionnarie_species.dart';
@@ -57,7 +58,7 @@ class _HomePageApp extends State<HomePageApp>{
                       image: AssetImage("assets/images/LOGO2.png"),
                     ),
                   ),
-                  BlueButtonInk(text: "Cuestionario Especie", onPressed: ()=>{
+                  BlueButtonInk(text: "Cuestionario Especie",width: 250, onPressed: ()=>{
                     showDialog(context: context,
                       builder: (BuildContext context)=>CupertinoAlertDialog(
                           
@@ -80,12 +81,11 @@ class _HomePageApp extends State<HomePageApp>{
                     ),
                     
                   }),
-                  BlueButtonInk(text: "Cuestionario Animal", onPressed: ()=>{
-                    
-                    onPressedState(),
+                  BlueButtonInk(text: "Cuestionario Animal",width: 250, onPressed: ()=>{
+                      Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>AnimalsMenu()) ),
                   
                   }),
-                  BlueButtonInk(text: "Consulta Informacion", onPressed: ()=>{}),
+                  BlueButtonInk(text: "Consulta Informacion", onPressed: ()=>{},width: 250,),
                   BannerFundation(),
 
               ],
