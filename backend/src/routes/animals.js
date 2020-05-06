@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const router= Router();
 const animals=require("../models/animal");
+const functionsAnimals=require('../functions/functions_animals');
 
 //animales
 const dogModel= animals.dog;
@@ -8,9 +9,84 @@ const catModel= animals.cat;
 const birdModel= animals.bird;
 const reptileModel= animals.reptile;
 //rutas para animales
+//_____________________________especiales perros____________________________
+
+router.post('/api/analyzeDogs',async(req,res)=>{
+    const myDogs= await dogModel.find();
+    const prototype= req.body;
+    var myPreferences=[];
+    for (const animal in myDogs) {
+       
+        value=functionsAnimals.compare(myDogs[animal],prototype);
+        myPreferences.push(functionsAnimals.addProperty(myDogs[animal]['_doc'],value));
+  
+    }
+    myPreferences.sort(function(a,b){
+        return  (b.nMatch - a.nMatch);
+    });
+    var slicesMP= myPreferences.slice(0,3);
+   
+    res.json({mensaje:"terminado exitosamente",slicesMP});
+    
+});
+//_____________________________especiales Gatos_______________________________
+router.post('/api/analyzeCats',async(req,res)=>{
+    const myCats= await catModel.find();
+    const prototype= req.body;
+    var myPreferences=[];
+    for (const animal in myCats) {
+       
+        value=functionsAnimals.compare(myCats[animal]['_doc'],prototype);
+        myPreferences.push(functionsAnimals.addProperty(myCats[animal]['_doc'],value));
+  
+    }
+    myPreferences.sort(function(a,b){
+        return  (b.nMatch - a.nMatch);
+    });
+    var slicesMP= myPreferences.slice(0,3);
+    res.json({mensaje:"terminado exitosamente",slicesMP});
+    
+});
+//_____________________________especiales Aves_______________________________
+router.post('/api/analyzeBirds',async(req,res)=>{
+    const myBirds= await birdModel.find();
+    const prototype= req.body;
+    var myPreferences=[];
+    for (const animal in myBirds) {
+       
+        value=functionsAnimals.compare(myBirds[animal]['_doc'],prototype);
+        myPreferences.push(functionsAnimals.addProperty(myBirds[animal]['_doc'],value));
+  
+    }
+    myPreferences.sort(function(a,b){
+        return  (b.nMatch - a.nMatch);
+    });
+    var slicesMP= myPreferences.slice(0,3);
+    res.json({mensaje:"terminado exitosamente",slicesMP});
+    
+});
+//_____________________________especiales Aves_______________________________
+router.post('/api/analyzeReptile',async(req,res)=>{
+    const myReptile= await reptileModel.find();
+    const prototype= req.body;
+    var myPreferences=[];
+    for (const animal in myReptile) {
+       
+        value=functionsAnimals.compare(myReptile[animal]['_doc'],prototype);
+        myPreferences.push(functionsAnimals.addProperty(myReptile[animal]['_doc'],value));
+  
+    }
+    myPreferences.sort(function(a,b){
+        return  (b.nMatch - a.nMatch);
+    });
+    var slicesMP= myPreferences.slice(0,3);
+    res.json({mensaje:"terminado exitosamente",slicesMP});
+    
+});
 // perros
 router.get('/api/extractDogs',async(req,res)=>{
     const totalDogs= await dogModel.find();
+    console.log(totalDogs);
     res.json({mensaje:"se extrageron con exito todos los perros",totalDogs});
 });
 router.post('/api/generateDog',async(req,res)=>{
