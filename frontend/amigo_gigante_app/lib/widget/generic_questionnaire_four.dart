@@ -2,6 +2,7 @@
 
 
 
+import 'package:amigo_gigante_app/animals/bloc/animals_bloc.dart';
 import 'package:amigo_gigante_app/species/bloc/species_bloc.dart';
 import 'package:amigo_gigante_app/widget/blue_circular_button.dart';
 import 'package:amigo_gigante_app/widget/button_white.dart';
@@ -12,17 +13,19 @@ class GenericQuestionnaireFour extends StatelessWidget{
   final String title;
   final String description;
   final List<String> answers;
-  final List<int> weight;
+  final List<String> weight;
   final VoidCallback onPressed;
   final VoidCallback onPressedBack;
+  final String type;
   SpeciesBloc speciesBloc;
-  
+  AnimalBloc animalBloc;
 
-   GenericQuestionnaireFour({Key key,@required this.title,@required this.description,@required this.answers,this.onPressed,@required this.weight,this.onPressedBack});
+   GenericQuestionnaireFour({Key key,@required this.title,@required this.description,@required this.answers,this.onPressed,@required this.weight,this.onPressedBack, this.type});
   
   @override
   Widget build(BuildContext context) {
     speciesBloc=BlocProvider.of(context);
+    animalBloc=BlocProvider.of(context);
     double  height=MediaQuery.of(context).size.height;
     double  width=MediaQuery.of(context).size.width;
  
@@ -87,22 +90,47 @@ class GenericQuestionnaireFour extends StatelessWidget{
             
             ButtonWhite(text: answers[0],onPressed: (){
               onPressed();
-              speciesBloc.saveQuestion(title,answers[0],weight[0]);
+              switch (type){
+                case "specie":  speciesBloc.saveQuestion(title,answers[0],weight[0]);break;
+                case "dogs": animalBloc.saveQuestionDogs(title,answers[0], weight[0]);break;
+                case "cats": animalBloc.saveQuestionCats(title,answers[0], weight[0]);break;
+                case "birds": animalBloc.saveQuestionBirds(title,answers[0], weight[0]);break;
+                case "reptiles": animalBloc.saveQuestionReptiles(title,answers[0], weight[0]);break;
+                
+              }
               
             },width:350),
             ButtonWhite(text: answers[1],onPressed: (){
               onPressed();
-              speciesBloc.saveQuestion(title,answers[1],weight[1]);
+               switch (type){
+                case "specie":  speciesBloc.saveQuestion(title,answers[1],weight[1]);break;
+                case "dogs": animalBloc.saveQuestionDogs(title,answers[1], weight[1]);break;
+                case "cats": animalBloc.saveQuestionCats(title,answers[1], weight[1]);break;
+                case "birds": animalBloc.saveQuestionBirds(title,answers[1], weight[1]);break;
+                case "reptiles": animalBloc.saveQuestionReptiles(title,answers[1], weight[1]);break;
+              }
               
             },width:350),
             ButtonWhite(text: answers[2],onPressed: (){
               onPressed();
-              speciesBloc.saveQuestion(title,answers[2],weight[2]);
+               switch (type){
+                case "specie":  speciesBloc.saveQuestion(title,answers[2],weight[2]);break;
+                case "dogs": animalBloc.saveQuestionDogs(title,answers[2], weight[2]);break;
+                case "cats": animalBloc.saveQuestionCats(title,answers[2], weight[2]);break;
+                case "birds": animalBloc.saveQuestionBirds(title,answers[2], weight[2]);break;
+                case "reptiles": animalBloc.saveQuestionReptiles(title,answers[2], weight[2]);break;
+              }
               
             },width:350),
             ButtonWhite(text: answers[3],onPressed: (){
               onPressed();
-              speciesBloc.saveQuestion(title,answers[3],weight[3]);
+               switch (type){
+                case "specie":  speciesBloc.saveQuestion(title,answers[3],weight[3]);break;
+                case "dogs": animalBloc.saveQuestionDogs(title,answers[3], weight[3]);break;
+                case "cats": animalBloc.saveQuestionCats(title,answers[3], weight[3]);break;
+                case "birds": animalBloc.saveQuestionBirds(title,answers[3], weight[3]);break;
+                case "reptiles": animalBloc.saveQuestionReptiles(title,answers[3], weight[3]);break;
+              }
  
             },width:350),
              BlueCircularButton(text: "atras", onPressed: (){

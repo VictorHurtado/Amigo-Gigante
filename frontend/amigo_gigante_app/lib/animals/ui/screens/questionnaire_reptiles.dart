@@ -1,33 +1,32 @@
-
-
-
-import 'package:amigo_gigante_app/species/bloc/species_bloc.dart';
-import 'package:amigo_gigante_app/species/model/question.dart';
-import 'package:amigo_gigante_app/species/ui/screen/results_species.dart';
+import 'package:amigo_gigante_app/animals/bloc/animals_bloc.dart';
 import 'package:amigo_gigante_app/widget/banner_fundation.dart';
 import 'package:amigo_gigante_app/widget/blue_circular_button.dart';
 import 'package:amigo_gigante_app/widget/generic_questionnaire_four.dart';
 import 'package:amigo_gigante_app/widget/generic_questionnaire_two.dart';
 import 'package:amigo_gigante_app/widget/gradient_back.dart';
 import 'package:flutter/material.dart';
+import 'package:amigo_gigante_app/species/model/question.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
-
-
-class QuestionnarieSpecies extends StatefulWidget{
-  List<Question> questions;
-  QuestionnarieSpecies(this.questions);
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _QuestionnarieSpice(questions);
+class QuestionnaireReptile extends StatefulWidget{
+  final List<Question> questions;
+  
+    const QuestionnaireReptile({Key key, this.questions});
+    @override
+    State<StatefulWidget> createState() {
+      // TODO: implement createState
+      return _QuestionnaireReptile(questions);
+    }
+  
   }
-}
-class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
-   List<Question> questions;
-   int index=0;
-   
-  _QuestionnarieSpice(this.questions);
+  
+
+class _QuestionnaireReptile extends State<QuestionnaireReptile>{
+  final List<Question> questions;
+  AnimalBloc animalBloc;
+  int index=0;
+  _QuestionnaireReptile(this.questions);
+
   void next(){
     setState(() {
       if(questions.length>1 && index<questions.length){   
@@ -47,10 +46,8 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
 
   @override
   Widget build(BuildContext context) {
-  
     double  width=MediaQuery.of(context).size.width;
-    
-    
+    animalBloc=BlocProvider.of(context);
     // TODO: implement build
     return Scaffold(
       body: Stack(
@@ -64,6 +61,7 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
                  description: questions[index].description,
                  answers: questions[index].answers,
                  weight: questions[index].weight,
+                 type: "reptiles",
                  onPressed: (){
               
                   next();
@@ -75,6 +73,7 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
                description: questions[index].description,
                answers: questions[index].answers,
                weight: questions[index].weight,
+               type: "reptiles",
                onPressed: (){
      
                   next();
@@ -84,7 +83,7 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
                 },
               )
 
-              :index==questions.length?
+              :index==questions.length && questions != null?
                 Container(
                 width: width-40,
                 margin: EdgeInsets.only(top: 240, bottom: 150),
@@ -119,7 +118,8 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
                         },width: 130,),
                         BlueCircularButton(text: "Terminar", onPressed: (){
                           // Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>ResultsSpecies(title:"Resultados")));
-                          Navigator.popAndPushNamed(context, '/resultsSpecies');
+                           Navigator.popAndPushNamed(context, '/resultsReptiles');
+                          
                         },width: 130,),
                       ],
                     ),
@@ -145,4 +145,7 @@ class _QuestionnarieSpice extends State<QuestionnarieSpecies>{
   }
 
 
-} 
+
+
+
+}

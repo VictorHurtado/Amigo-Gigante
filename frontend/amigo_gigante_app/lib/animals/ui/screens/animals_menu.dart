@@ -1,12 +1,31 @@
+import 'package:amigo_gigante_app/animals/bloc/animals_bloc.dart';
+import 'package:amigo_gigante_app/animals/ui/screens/questionnaire_birds.dart';
+import 'package:amigo_gigante_app/animals/ui/screens/questionnaire_cats.dart';
+import 'package:amigo_gigante_app/animals/ui/screens/questionnaire_dogs.dart';
+import 'package:amigo_gigante_app/animals/ui/screens/questionnaire_reptiles.dart';
+import 'package:amigo_gigante_app/species/model/question.dart';
 import 'package:amigo_gigante_app/widget/banner_fundation.dart';
 import 'package:amigo_gigante_app/widget/blue_button.dart';
 import 'package:amigo_gigante_app/widget/gradient_back.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
+class AnimalsMenu extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _AnimalsMenu();
+  }
 
-class AnimalsMenu extends StatelessWidget{
+}
+class _AnimalsMenu extends State<AnimalsMenu>{
+  List<Question> questions=List<Question>();
+  AnimalBloc animalBloc;
+ 
   @override
   Widget build(BuildContext context) {
+    animalBloc=BlocProvider.of(context);
     // TODO: implement build
     return Scaffold(
       body: Stack(
@@ -35,18 +54,124 @@ class AnimalsMenu extends StatelessWidget{
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Column(
-                    
+                    Column(                    
                       children: <Widget>[
-                          BlueButtonInk(text: "Perros", width: 150,onPressed: ()=>{}),
-                           BlueButtonInk(text: "Gatos", width: 150, onPressed: ()=>{}),
+                          BlueButtonInk(text: "Perros", width: 150,onPressed: (){
+                            showDialog(context: context,
+                              builder: (BuildContext context)=>CupertinoAlertDialog(
+                            
+                                title: Text("Bienvenido"),
+                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                actions: <Widget>[
+                                  CupertinoDialogAction(
+                      
+                                  child: Text("Entendido"),
+                                  isDefaultAction: true,
+                                  onPressed: (){
+                                      questions=[];
+                                      setState(() {
+                                        animalBloc.createdQuestionsDogs().then((value){
+                                          print(value);
+                                          questions.addAll(value);
+                                        });
+                                      });
+                                      Navigator.pop(context);
+                                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>QuestionnaireDog(questions: questions,)));
+                                  },
+                                  )
+                                ],
+                              )
+                            );
+                            
+                          }),
+                          BlueButtonInk(text: "Gatos", width: 150, onPressed: (){
+                            showDialog(context: context,
+                              builder: (BuildContext context)=>CupertinoAlertDialog(
+                            
+                                title: Text("Bienvenido"),
+                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                actions: <Widget>[
+                                  CupertinoDialogAction(
+                      
+                                  child: Text("Entendido"),
+                                  isDefaultAction: true,
+                                  onPressed: (){
+                                      questions=[];
+                                     setState(() {
+                                        animalBloc.createdQuestionsCats().then((value){
+                                          print(value);
+                                          questions.addAll(value);
+                                        });
+                                      });
+                                      Navigator.pop(context);
+                                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>QuestionnaireCat(questions: questions,)));
+                                  },
+                                  )
+                                ],
+                              )
+                            );
+                            
+                          }),
                       ],
                     ),
-                    Column(
-                   
+                    Column(                   
                       children: <Widget>[
-                         BlueButtonInk(text: "Aves", width: 150, onPressed: ()=>{}),
-                          BlueButtonInk(text: "Reptiles", width: 150, onPressed: ()=>{})
+                        BlueButtonInk(text: "Aves", width: 150, onPressed: (){
+                            showDialog(context: context,
+                              builder: (BuildContext context)=>CupertinoAlertDialog(
+                            
+                                title: Text("Bienvenido"),
+                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                actions: <Widget>[
+                                  CupertinoDialogAction(
+                      
+                                  child: Text("Entendido"),
+                                  isDefaultAction: true,
+                                  onPressed: (){
+                                      questions=[];
+                                     setState(() {
+                                        animalBloc.createdQuestionsBirds().then((value){
+                                          print(value);
+                                          questions.addAll(value);
+                                        });
+                                      });
+                                      Navigator.pop(context);
+                                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>QuestionnaireBird(questions: questions,)));
+                                  },
+                                  )
+                                ],
+                              )
+                            );
+                            
+                          }),
+                        BlueButtonInk(text: "Reptiles", width: 150, onPressed: (){
+                            showDialog(context: context,
+                              builder: (BuildContext context)=>CupertinoAlertDialog(
+                            
+                                title: Text("Bienvenido"),
+                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                actions: <Widget>[
+                                  CupertinoDialogAction(
+                      
+                                  child: Text("Entendido"),
+                                  isDefaultAction: true,
+                                  onPressed: (){
+                                      questions=[];
+                                     setState(() {
+                                        animalBloc.createdQuestionsBirds().then((value){
+                                          print(value);
+                                          questions.addAll(value);
+                                        });
+                                      });
+                                      Navigator.pop(context);
+                                      Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>QuestionnaireReptile(questions: questions,)));
+                                  },
+                                  )
+                                ],
+                              )
+                            );
+                            
+                          })
                       ],
                     )
                   ],

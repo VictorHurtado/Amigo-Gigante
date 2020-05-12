@@ -9,6 +9,7 @@ const dogSchema= new Schema({
     timeRequired:{type: Boolean,required: true},
     energy: {type: Boolean,required: true},
     age: {type: String,required:true},
+    photo:{type:String, required:true},
     raza: { type: String,  required:true}, 
 });
 
@@ -18,7 +19,8 @@ const catSchema= new Schema({
     maintenance: {type: Number,required: true},
     age: {type: String,required:true},
     personality:[String],
-    raza: { type: String,  required:true}, 
+    raza: { type: String,  required:true},
+    photo:{type:String, required:true} 
 });
 const birdSchema= new Schema({
     name: String,
@@ -28,17 +30,20 @@ const birdSchema= new Schema({
     color: {type: String,required:true},
     maintenance: {type: Number,required: true},
     age: {type: String,required:true},
-    raza:{type:String,required:true}
+    raza:{type:String,required:true},
+    photo:{type:String,required:true}
+
 });
 const reptileSchema= new Schema({
-
+    name:String,
     size: {type: String,required:true},
     maintenance: {type: Number,required: true},
     extremities:{type: Boolean,required:true},
     type:{type:String,required:true},
     danger:{type:String,required:true},
     food: {type: String,required:true},
-    raza: {type:String,required: true}
+    raza: {type:String,required: true},
+    photo:{type:String,required:true}
 });
 
 module.exports={

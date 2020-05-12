@@ -1,0 +1,260 @@
+{
+    "dogs":{
+        "questions":{
+            "1":"Nuestros amigos son de diferentes tamaños ¿De qué tamaño te gustaría su amigo?",
+            "2":"Los perros tienen variedades de pelaje, algunos tienen el cabello esponjado, otros lo tienen lacio. ¿El pelaje para su gusto debería ser?",
+            "3":"Algunos de nuestros cachorros pueden ser muy tiernos y cariñosos, otros por su naturaleza con más agresivos, los cuales servirían para defensa personal. Aunque no significa que no puedan ser una bola de amor dependiendo de su dueño. ¿Su amigo ideal sería dócil o agresivo por naturaleza?",
+            "4":"Una mascota como lo es un perro, puede requerir de cuidados especiales. Por lo tanto, es un gasto económico a tener en cuenta, ya sea en; juguetes, visitas al veterinario, vacunas, alimento, etc. Anualmente estos son los precios de mantenimiento de un perro, seleccione la que más se acomode a usted.",
+            "5":"Algunas mascotas requieren de tratos especiales, como peinarse el cabello, sacarlos a pasear, jugar con ellos. ¿Posee usted el tiempo necesario para estas actividades?",
+            "6":"Algunos de nuestros amiguitos son muy tranquilos, pero otros son muy divertidos y enérgicos. ¿Cómo te gustan a ti?",
+            "7":"Tenemos amiguitos de diferentes edades, desde cachorros hasta ya desarrollados. ¿Cómo te gustaría?",
+            "8":"En Amigo Gigante, tenemos perros recogidos de la calle. Debido a ello, algunos de nuestros perros no son de raza. ¿Cómo es tu preferencia?"
+        },
+        "answers":{
+            "1":[
+                "a.  Muy Grande",
+                "b.  Grande",
+                "c.  Mediano",
+                "d.  Pequeño"
+            ],
+            "2":[
+                "a. Poco",
+                "b.  Normal",
+                "c.  Abundante",
+                "d.  Muy abundante"
+            ],
+            "3":[
+                "a.  Dócil",
+                "b.  Agresivo"
+            ],
+            "4":[
+                "a.  1 MILLON 500 MIL PESOS COLOMBIANOS",
+                "b.  3 MILLONES PESOS COLOMBIANOS",
+                "c.  5 MILLONES PESOS COLOMBIANOS",
+                "d.  no tiene importancia"
+            ],
+            "5":[
+                "a. true",
+                "b. false"    
+            ],
+            "6":[
+                "a. Tranquilos",
+                "b. Enérgicos"
+            ],
+            "7":[
+                "a.  edad (0 años o menos)",
+                "b.  edad (1 años – 2 años)",
+                "c.  edad (2 años – 5 años)",
+                "d.  (5 años o más)"
+            ],
+            "8":[
+                "a. Raza",
+                "b. Criollo",
+                "c. Enrazado",
+                "d. No importa"
+            ]
+        },
+        "weight":{
+            "1":[
+                "{\"size\":\"muygrande\"}",
+                "{\"size\":\"grande\"}",
+                "{\"size\":\"mediano\"}",
+                "{\"size\":\"pequeño\"}"
+            ],
+            "2":[
+                "{\"fur\":\"poco\"}",
+                "{\"fur\":\"normal\"}",
+                "{\"fur\":\"abundante\"}",
+                "{\"fur\":\"muyabundante\"}"
+            ],
+            "3":[
+                "{\"docility\":\"docil\"}",
+                "{\"docility\":\"agresivo\"}"
+            ],
+            "4":[
+                "{\"maintenance\":1500000}",
+                "{\"maintenance\":3000000}",
+                "{\"maintenance\":5000000}",
+                "{\"maintenance\":0}"
+            ],
+            "5":[
+                "{\"timeRequired\":true}",
+                "{\"timeRequired\":false}"
+            ],
+            "6":[
+                "{\"energy\":false}",
+                "{\"energy\":true}"
+            ],
+            "7":[
+                "{\"age\":\"cachorro\"}",
+                "{\"age\":\"adulto\"}",
+                "{\"age\":\"adulto\"}",
+                "{\"age\":\"adultomayor\"}"
+            ],
+            "8":[
+                "{\"raza\":\"raza\"}",
+                "{\"raza\":\"criollo\"}",
+                "{\"raza\":\"enrazado\"}",
+                "{\"raza\":\"sinimportancia\"}"
+            ]
+
+        }
+
+    },
+    "cats":{
+        "questions":{
+            "1":"Nuestros amigos felinos tienen una gran variedad de pelaje, ¿cómo te gustaría el pelaje de tu amigo? ",
+            "2":"Los gatos pueden tener un costo anual entre vacunas, juguetes, etc. Teniendo en cuenta esto, seleccione el rango de presupuesto anual más acorde a su estabilidad financiera.",
+            "3":"Tenemos amiguitos deiferentes edades, desde crías hasta ya desarrollados. ¿Cómo te gustaría?",
+            "4":"Nuestros amigos tienen diferentes personalidades, desde muy tranquilos, mimados o inquietos, ¿cómo prefiere usted?",
+            "5":"Nuestros amiguitos son de raza y otros son criollos, ¿Tiene usted alguna preferencia?"
+        },
+        "answers":{
+            "1":[
+                "a. Poco",
+                "b. Normal",
+                "c. Abundante",
+                "d. Muy abundante"
+            ],
+            "2":[
+                "a. 1 MILLON DE PESOS COLOMBIANOS",
+                "b. 2 MILLONES 500 MIL PESOS COLOMBIANOS",
+                "c. 5 MILLONES DE PESOS COLOMBIANOS",
+                "d. sin importancia"
+            ],
+            "3":[
+                "a. edad (0 años o menos)",
+                "b. edad (1 años – 2 años)",
+                "c. edad (2 años – 5 años)",
+                "d. (5 años o más)"
+            ],
+            "4":[
+                "a. Cariñoso",
+                "b. Tranquilo",
+                "c. Juguetón",
+                "d. agresivo "
+            ],
+            "5":[
+                "a. Raza",
+                "b. Criollos",
+                "c. Enrazado" ,
+                "d. No importa"
+            ]
+            
+        },
+        "weight":{
+            "1":[
+                "{\"fur\":\"poco\"}",
+                "{\"fur\":\"normal\"}",
+                "{\"fur\":\"abundante\"}",
+                "{\"fur\":\"muyabundante\"}"
+            ],
+            "2":[
+                "{\"maintenance\":1500000}",
+                "{\"maintenance\":3000000}",
+                "{\"maintenance\":5000000}",
+                "{\"maintenance\":0}"
+            ],
+            "3":[
+                "{\"age\":\"cachorro\"}",
+                "{\"age\":\"adulto\"}",
+                "{\"age\":\"adulto\"}",
+                "{\"age\":\"adultomayor\"}"
+            ],
+            "4":[
+                "{\"personality\":\"cariñoso\"}",
+                "{\"personality\":\"tranquilo\"}",
+                "{\"personality\":\"jugueton\"}",
+                "{\"personality\":\"agresivo\"}"
+            ],
+            
+            
+            "5":[
+                "{\"raza\":\"raza\"}",
+                "{\"raza\":\"criollo\"}",
+                "{\"raza\":\"enrazado\"}",
+                "{\"raza\":\"sinimportancia\"}"
+            ]
+
+        } 
+
+    },
+    "birds":{
+        "questions":{
+            "1":"Nuestros amigos con plumas son de diferentes tamaños ¿De qué tamaño te gustaría su amigo? ",
+            "2":"Algunas aves cantan, otras imitan a los humanos ¿Cómo te gustaría a ti?",
+            "3":"Prefieres un ave que se pueda domesticar, ¿prefieres un ave que pueda ser domesticado?",
+            "4":"Algunas aves tienen unos colores hermosos, ¿Tienes alguna preferencia?",
+            "5":"Para tener un ave se debe tener en cuenta el costo adicional como la jaula y otros implementos que oscila entre los 100.000 y 200.000 pesos. Teniendo en cuenta esto, seleccione el rango de presupuesto anual más acorde a su estabilidad financiera"
+        },
+        "answers":{
+            "1":[
+                "a. Grande",
+                "b. Mediano",
+                "c. Pequeño",
+                "d. Muy pequeño"
+            ],
+            
+            "2":[
+                "True",
+                "False"
+           
+            ],
+            "3":[
+                "True ",
+                "False "
+         
+            ],
+            "4":[
+                "a. Varios colores",
+                "b. Pocos colores",
+                "c. Un solo color" ,
+                "d. No tengo preferencia"
+            ],
+            "5":[
+                "a. 1 MILLON DE PESOS COLOMBIANOS",
+                "b. 2 MILLONES 500 MIL PESOS COLOMBIANOS",
+                "c. 4 MILLONES DE PESOS COLOMBIANOS",
+                "d. sin importancia"
+            ]
+            
+        },
+         "weight":{
+            "1":[
+                "{\"size\":\"grande\"}",
+                "{\"size\":\"mediano\"}",
+                "{\"size\":\"pequeño\"}",
+                "{\"size\":\"muypequeño\"}"
+                
+            ],
+            
+            "2":[
+                "{\"sound\":\true}",
+                "{\"sound\":false}"
+                
+            ],
+            "3":[
+                "{\"domesticate\":true}",
+                "{\"domesticate\":false}"
+               
+            ],
+            
+            "4":[
+                "{\"color\":\"policolor\"}",
+                "{\"color\":\"pocoscolores\"}",
+                "{\"color\":\"unicolor\"}",
+                "{\"color\":\"sinpreferencia\"}"
+            ],
+            
+            "5":[
+                "{\"maintenance\":1000000}",
+                "{\"maintenance\":2000000}",
+                "{\"maintenance\":4000000}",
+                "{\"maintenance\":0}"
+            ]
+
+        } 
+
+    }
+    
+}

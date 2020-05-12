@@ -1,8 +1,102 @@
+PERROS
+name:Bartolomeo
+size:Mediano
+fur:Normal
+docility:Docil
+maintenance:1500000
+timeRequired:true
+energy:true
+age:cachorro
+raza:corgi
+photo:https://okdiario.com/img/2020/03/12/-es-mortal-el-coronavirus-en-mi-perro_.jpg
+
+name:Luna
+size:Pequeño
+fur:Muyabundante
+docility:Agresivo
+maintenance:3000000
+timeRequired:true
+energy:true
+age:Adulto
+raza:Yorkshire
+photo:https://www.eldictamen.mx/wp-content/uploads/2020/04/Perros.jpg
+
+name:Negro
+size:Mediano
+fur:Poco
+docility:Docil
+maintenance:1500000
+timeRequired:true
+energy:false
+age:Adulto
+raza:Criollo
+photo:https://media.quincemil.com/imagenes/2020/03/16165523/iStock-1206376445-640x360.jpg
+
+name:Romeo
+size:Muygrande
+fur:Poco
+docility:Agresivo
+maintenance:5000000
+timeRequired:true
+energy:false
+age:Adulto
+raza:Criollo
+photo:https://m.eltiempo.com/files/image_640_428/uploads/2020/02/28/5e59a934f2c20.jpeg
+
+Gatos.
+María
+
+ 
+name:Maria
+fur:Normal
+maintenance: 1500000
+age:Adulto
+personality:Cariñoso
+raza:Criollo
+photo:https://cnnespanol2.files.wordpress.com/2020/04/gatos-coronavirus-salud.jpg?quality=100&strip=info
+
+ 
+Adolfo
+
+ 
+name:Adolfo
+fur:Muy abundante
+maintenance: 3000000
+age:Cachorros
+personality:Juguetón
+raza:Maine coon
+photo:https://www.lavanguardia.com/r/GODO/LV/p7/WebSite/2020/04/07/Recortada/img_jalbarran_20200407-110629_imagenes_lv_terceros_gatos-kRCC-W030I7QZD0JCY73Y-992x558@LaVanguardia-Web.jpg
+
+
+Chimuelo
+
+ 
+name:Chimuelo
+fur:Normal
+maintenance: 3000000
+age:Desarrollado
+personality:Tranquilo
+raza:Siamés
+photo:https://www.eluniverso.com/sites/default/files/styles/powgallery_1024/public/fotos/2020/04/-_int_gato.jpg?itok=HXuaJcLz
+
+Eva
+
+ 
+name:Eva
+fur:Abundantel
+maintenance: 5000000
+age:Adulto
+personality:Juguetón
+raza:Ragdoll
+photo:https://www.lavanguardia.com/r/GODO/LV/p7/WebSite/2020/04/09/Recortada/img_djuarez_20200409-094614_imagenes_lv_otras_fuentes_gato-k9tG--656x445@LaVanguardia-Web.jpeg
+
+
+
 Reptiles
 Larry
 
 
-
+name:Larry
 size:pequeño
 maintenance:2000000
 extremities:true
@@ -10,7 +104,7 @@ type:saurio
 danger:nopeligroso
 food:insectivoro
 raza:Gecko
-
+photo:https://radioturquesa.fm/wp-content/uploads/2017/05/KOHAKU-el-gecko-leopardo-sonriente-2.jpg
 
 
 
@@ -18,7 +112,7 @@ raza:Gecko
 
 
 Martina
-
+name:Martina
 size:Grande
 maintenance:4000000
 extremities:true
@@ -26,31 +120,32 @@ type:saurio
 danger:nopeligroso
 food:carnivoro
 raza:Iguana
+photo:https://cumbrepuebloscop20.org/wp-content/uploads/2018/09/Iguana-2.jpg
 
 
 Cupida
 
-
+name:Cupida
 size:mediana
 maintenance:4000000
 extremities:false
 type:ofidio
 danger:nopeligroso
 food:true
-raza:serpientedeleche
-
+raza:Serpiente de leche
+photo:https://reptiles23.files.wordpress.com/2017/02/falsa_coral2.jpg?w=748
 
 Romana
 
-
+name:Romana
 size:pequeña
 maintenance:2000000
 extremities:true
 type:quelonio
 danger:peligroso
 food:false
-raza:tortugadeorejasrojas
-
+raza:Tortuga de orejas rojas
+photo:https://t2.ea.ltmcdn.com/es/images/9/5/1/img_cuidados_de_la_tortuga_acuatica_de_orejas_rojas_23159_600_square.jpg
 
 
 
@@ -65,7 +160,9 @@ sound:false
 domesticate:true
 color:unicolor
 maintenance:2000000
-raza:cacatuaalba
+raza:cacatua alba
+age:adulto
+photo:https://image.shutterstock.com/image-photo/umbrella-cockatoo-cacatua-alba-on-260nw-95452735.jpg
 
 Pocholo
 
@@ -77,6 +174,8 @@ domesticate:false
 color:policolor
 maintenance:1000000
 raza:Lorito
+age:joven
+photo:https://estaticos.elperiodico.com/resources/jpg/0/1/primer-plano-loro-1578388710210.jpg
 
 Rey
 
@@ -87,7 +186,9 @@ sound:true
 domesticate:false
 color:pocoscolores
 maintenance:1000000
-raza:pericoaustraliano
+raza:perico australiano
+age:adulto
+photo:https://avesexotica.org/wp-content/uploads/2018/08/periquitos-australianos.jpg
 
 Dominga
 
@@ -98,5 +199,6 @@ sound:false
 domesticate:false
 color:policolor
 maintenance:4000000
-raza:loroguacamayo
-
+raza:loro guacamayo
+age:adultomayor
+photo:https://demascotas.info/wp-content/uploads/2019/01/scarlet-macaw-tropical-bird-3924046_640.jpg

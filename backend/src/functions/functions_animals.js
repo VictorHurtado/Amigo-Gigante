@@ -16,6 +16,7 @@ function compare( animal , prototype){
     }
     return nMatch;
 }
+
 module.exports={
     compare: compare,
     addProperty:agregarPropiedad,

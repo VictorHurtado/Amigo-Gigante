@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class Question {
   String title;
   String description;
-  List<int> weight;
+  List<String> weight;
   List<String> answers;
+  
 
   Question ({Key key, this.title,this.description,this.answers,this.weight});
 
@@ -12,7 +13,7 @@ class Question {
     var answersFromJson =parsedJson["answers"]["$index"];
     List<String> answersList =List<String>.from(answersFromJson);
     var weightFromJson =parsedJson["weight"]["$index"];
-    List<int> listWeight= List<int>.from(weightFromJson);
+    List<String> listWeight= List<String>.from(weightFromJson);
   
     return new Question(
       title: "${index}",

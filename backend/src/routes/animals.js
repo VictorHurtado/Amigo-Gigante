@@ -11,9 +11,21 @@ const reptileModel= animals.reptile;
 //rutas para animales
 //_____________________________especiales perros____________________________
 
-router.post('/api/analyzeDogs',async(req,res)=>{
+router.post('/api/dogs/analyzeDogs',async(req,res)=>{
     const myDogs= await dogModel.find();
-    const prototype= req.body;
+    const body= req.body;
+   
+    const prototype={};
+    var responses = JSON.parse(body.myResponses);
+    for (const resp in responses) {
+        //accedo a cada llave que llega por el json y extraigo la segunda posicion que corresponde a mi respuesta
+       var mystring =responses[resp][1];
+       //la respuesta vuelve a venir en formato json por lo que es necesario parsearlo y al realizar el parseo se añade este al objeto prototipo
+       Object.assign(prototype,JSON.parse(mystring));
+       
+    }
+    console.log(prototype);
+
     var myPreferences=[];
     for (const animal in myDogs) {
        
@@ -30,10 +42,20 @@ router.post('/api/analyzeDogs',async(req,res)=>{
     
 });
 //_____________________________especiales Gatos_______________________________
-router.post('/api/analyzeCats',async(req,res)=>{
+router.post('/api/cats/analyzeCats',async(req,res)=>{
     const myCats= await catModel.find();
-    const prototype= req.body;
+    const body= req.body;
+    
     var myPreferences=[];
+    const prototype={};
+    var responses = JSON.parse(body.myResponses);
+    for (const resp in responses) {
+        //accedo a cada llave que llega por el json y extraigo la segunda posicion que corresponde a mi respuesta
+       var mystring =responses[resp][1];
+       //la respuesta vuelve a venir en formato json por lo que es necesario parsearlo y al realizar el parseo se añade este al objeto prototipo
+       Object.assign(prototype,JSON.parse(mystring));
+       
+    }
     for (const animal in myCats) {
        
         value=functionsAnimals.compare(myCats[animal]['_doc'],prototype);
@@ -48,10 +70,19 @@ router.post('/api/analyzeCats',async(req,res)=>{
     
 });
 //_____________________________especiales Aves_______________________________
-router.post('/api/analyzeBirds',async(req,res)=>{
+router.post('/api/birds/analyzeBirds',async(req,res)=>{
     const myBirds= await birdModel.find();
-    const prototype= req.body;
+    const body= req.body;
     var myPreferences=[];
+    const prototype={};
+    var responses = JSON.parse(body.myResponses);
+    for (const resp in responses) {
+        //accedo a cada llave que llega por el json y extraigo la segunda posicion que corresponde a mi respuesta
+       var mystring =responses[resp][1];
+       //la respuesta vuelve a venir en formato json por lo que es necesario parsearlo y al realizar el parseo se añade este al objeto prototipo
+       Object.assign(prototype,JSON.parse(mystring));
+       
+    }
     for (const animal in myBirds) {
        
         value=functionsAnimals.compare(myBirds[animal]['_doc'],prototype);
@@ -62,14 +93,24 @@ router.post('/api/analyzeBirds',async(req,res)=>{
         return  (b.nMatch - a.nMatch);
     });
     var slicesMP= myPreferences.slice(0,3);
+    console.log(slicesMP);
     res.json({mensaje:"terminado exitosamente",slicesMP});
     
 });
-//_____________________________especiales Aves_______________________________
-router.post('/api/analyzeReptile',async(req,res)=>{
+//_____________________________especiales Reptiles_______________________________
+router.post('/api/reptiles/analyzeReptiles',async(req,res)=>{
     const myReptile= await reptileModel.find();
-    const prototype= req.body;
+    const body= req.body;
     var myPreferences=[];
+    const prototype={};
+    var responses = JSON.parse(body.myResponses);
+    for (const resp in responses) {
+        //accedo a cada llave que llega por el json y extraigo la segunda posicion que corresponde a mi respuesta
+       var mystring =responses[resp][1];
+       //la respuesta vuelve a venir en formato json por lo que es necesario parsearlo y al realizar el parseo se añade este al objeto prototipo
+       Object.assign(prototype,JSON.parse(mystring));
+       
+    }
     for (const animal in myReptile) {
        
         value=functionsAnimals.compare(myReptile[animal]['_doc'],prototype);
@@ -84,12 +125,12 @@ router.post('/api/analyzeReptile',async(req,res)=>{
     
 });
 // perros
-router.get('/api/extractDogs',async(req,res)=>{
+router.get('/api/dogs/extractDogs',async(req,res)=>{
     const totalDogs= await dogModel.find();
     console.log(totalDogs);
     res.json({mensaje:"se extrageron con exito todos los perros",totalDogs});
 });
-router.post('/api/generateDog',async(req,res)=>{
+router.post('/api/dogs/generateDog',async(req,res)=>{
 
     const body = req.body;
    try {
@@ -102,7 +143,7 @@ router.post('/api/generateDog',async(req,res)=>{
        });
    }
 });
-router.delete('/api/deleteDog/:id',async(req,res)=>{
+router.delete('/api/dogs/deleteDog/:id',async(req,res)=>{
     const _id= req.params.id;
     try {
         const dogdelete = await dogModel.findByIdAndDelete({_id});
@@ -119,11 +160,11 @@ router.delete('/api/deleteDog/:id',async(req,res)=>{
     }
 });
 // Gatos
-router.get('/api/extractCats',async(req,res)=>{
+router.get('/api/cats/extractCats',async(req,res)=>{
     const totalCats= await catModel.find();
     res.json({mensaje:"se extrageron con exito todos los gatos",totalCats});
 });
-router.post('/api/generateCat',async(req,res)=>{
+router.post('/api/cats/generateCat',async(req,res)=>{
    
     const body = req.body;
    try {
@@ -136,7 +177,7 @@ router.post('/api/generateCat',async(req,res)=>{
        });
    }
 });
-router.delete('/api/deleteCat/:id',async(req,res)=>{
+router.delete('/api/cats/deleteCat/:id',async(req,res)=>{
     const _id= req.params.id;
     try {
         const catdelete = await catModel.findByIdAndDelete({_id});
@@ -153,11 +194,11 @@ router.delete('/api/deleteCat/:id',async(req,res)=>{
     }
 });
 // Bird
-router.get('/api/extractBirds',async(req,res)=>{
+router.get('/api/birds/extractBirds',async(req,res)=>{
     const totalBirds= await birdModel.find();
     res.json({mensaje:"se extrageron con exito",totalBirds});
 });
-router.post('/api/generateBird',async(req,res)=>{
+router.post('/api/birds/generateBird',async(req,res)=>{
    
     const body = req.body;
    try {
@@ -170,7 +211,7 @@ router.post('/api/generateBird',async(req,res)=>{
        });
    }
 });
-router.delete('/api/deleteBird/:id',async(req,res)=>{
+router.delete('/api/birds/deleteBird/:id',async(req,res)=>{
     const _id= req.params.id;
     try {
         const birdDelete = await birdModel.findByIdAndDelete({_id});
@@ -187,11 +228,11 @@ router.delete('/api/deleteBird/:id',async(req,res)=>{
     }
 });
 // Reptile
-router.get('/api/extractReptiles',async(req,res)=>{
+router.get('/api/reptiles/extractReptiles',async(req,res)=>{
     const totalReptiles= await reptileModel.find();
     res.json({mensaje:"se extrageron con exito todos los gatos",totalReptiles});
 });
-router.post('/api/generateReptile',async(req,res)=>{
+router.post('/api/reptiles/generateReptile',async(req,res)=>{
    
     const body = req.body;
    try {
@@ -204,7 +245,7 @@ router.post('/api/generateReptile',async(req,res)=>{
        });
    }
 });
-router.delete('/api/deleteReptile/:id',async(req,res)=>{
+router.delete('/api/reptiles/deleteReptile/:id',async(req,res)=>{
     const _id= req.params.id;
     try {
         const reptileDelete = await reptileModel.findByIdAndDelete({_id});

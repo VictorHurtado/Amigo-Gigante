@@ -46,6 +46,7 @@ flutter:
   assets:
    - assets/images/LOGO2.png
    - assets/resources/questions.json
+   - assets/resources/questions_animals.json
    - assets/images/Logo1.png
   #  - images/a_dot_ham.jpeg
 

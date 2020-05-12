@@ -7,6 +7,7 @@ import 'package:amigo_gigante_app/widget/blue_circular_button.dart';
 import 'package:amigo_gigante_app/widget/button_white.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:amigo_gigante_app/animals/bloc/animals_bloc.dart';
 
 class GenericQuestionnaireTwo extends StatelessWidget{
   final String title;
@@ -14,10 +15,12 @@ class GenericQuestionnaireTwo extends StatelessWidget{
   final List<String> answers;
   final VoidCallback onPressed;
   final VoidCallback onPressedBack;
-  final List<int> weight;
+  final List<String> weight;
+  final String type;
   SpeciesBloc speciesBloc;
+  AnimalBloc animalBloc;
 
-   GenericQuestionnaireTwo({Key key,@required this.title,@required this.description,@required this.answers,this.onPressed,@required this.weight,this.onPressedBack});
+   GenericQuestionnaireTwo({Key key,@required this.title,@required this.description,@required this.answers,this.onPressed,@required this.weight,this.onPressedBack, this.type});
   
   
   @override
@@ -25,6 +28,7 @@ class GenericQuestionnaireTwo extends StatelessWidget{
     double  height=MediaQuery.of(context).size.height;
     double  width=MediaQuery.of(context).size.width;
    speciesBloc=BlocProvider.of(context);
+   animalBloc=BlocProvider.of(context);
  
     // TODO: implement build
     final questionTitle=Container(
@@ -92,12 +96,28 @@ class GenericQuestionnaireTwo extends StatelessWidget{
             
             ButtonWhite(text: answers[0],onPressed: (){
               onPressed();
-              speciesBloc.saveQuestion(title,answers[0],weight[0]);
+              print("hola");
+              switch (type){
+                case "specie":  speciesBloc.saveQuestion(title,answers[0],weight[0]);break;
+                case "dogs": animalBloc.saveQuestionDogs(title,answers[0], weight[0]);break;
+                case "cats": animalBloc.saveQuestionCats(title,answers[0], weight[0]);break;
+                case "birds": animalBloc.saveQuestionBirds(title,answers[0], weight[0]);break;
+                case "reptiles": animalBloc.saveQuestionReptiles(title,answers[0], weight[0]);break;
+              }
+             
               
             },width:170),
             ButtonWhite(text: answers[1],onPressed: (){
               onPressed();
-              speciesBloc.saveQuestion(title,answers[1],weight[1]);
+              switch (type){
+                case "specie":  speciesBloc.saveQuestion(title,answers[1],weight[1]);break;
+                case "dogs": animalBloc.saveQuestionDogs(title,answers[1], weight[1]);break;
+                case "cats": animalBloc.saveQuestionCats(title,answers[1], weight[1]);break;
+                case "birds": animalBloc.saveQuestionBirds(title,answers[1], weight[1]);break;
+                case "reptiles": animalBloc.saveQuestionReptiles(title,answers[1], weight[1]);break;
+              }
+             
+              
             },width:170),
             
           ],

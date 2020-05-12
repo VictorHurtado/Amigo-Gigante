@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:charts_flutter/flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:amigo_gigante_app/species/model/question.dart';
 import 'package:amigo_gigante_app/species/repository/extract_questions_repository.dart';
@@ -34,9 +33,10 @@ class SpeciesBloc extends Bloc{
     return jsonString.body;
   }
   //guardar la respuesta
-  void saveQuestion(String indexView,String response,int weightQuestion){ 
+  void saveQuestion(String indexView,String response,String weightQuestion){ 
+    
     var myResponse={
-      indexView: [response,weightQuestion]
+      indexView: [response,int.parse(weightQuestion)]
     };
     responses.addAll(myResponse);
     print("asi quedo el map: $responses");

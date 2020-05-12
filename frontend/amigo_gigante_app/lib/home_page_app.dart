@@ -1,7 +1,9 @@
+import 'package:amigo_gigante_app/animals/bloc/animals_bloc.dart';
 import 'package:amigo_gigante_app/animals/ui/screens/animals_menu.dart';
+import 'package:amigo_gigante_app/animals/ui/screens/questionnaire_dogs.dart';
 import 'package:amigo_gigante_app/species/bloc/species_bloc.dart';
 import 'package:amigo_gigante_app/species/model/question.dart';
-import 'package:amigo_gigante_app/species/ui/screen/questionnarie_species.dart';
+import 'package:amigo_gigante_app/species/ui/screen/questionnaire_species.dart';
 
 import 'package:amigo_gigante_app/widget/banner_fundation.dart';
 import 'package:amigo_gigante_app/widget/blue_button.dart';
@@ -26,7 +28,7 @@ class _HomePageApp extends State<HomePageApp>{
   void onPressedState(){
     setState(() {
       speciesBloc.createdQuestions().then((value){
-                      
+        print(value);      
         questions.addAll(value);
       });
                     
@@ -73,7 +75,7 @@ class _HomePageApp extends State<HomePageApp>{
                                 questions=[];
                                 onPressedState();
                                 Navigator.pop(context);
-                                Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>QuestionnarieSpecies(questions)));
+                                Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>QuestionnaireSpecies(questions)));
                              },
                              )
                           ],
@@ -82,7 +84,8 @@ class _HomePageApp extends State<HomePageApp>{
                     
                   }),
                   BlueButtonInk(text: "Cuestionario Animal",width: 250, onPressed: ()=>{
-                      Navigator.push(context,MaterialPageRoute(builder: (BuildContext context )=>AnimalsMenu()) ),
+                    
+                      Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>AnimalsMenu()) ),
                   
                   }),
                   BlueButtonInk(text: "Consulta Informacion", onPressed: ()=>{},width: 250,),
