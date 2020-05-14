@@ -45,7 +45,7 @@ class _AnimalsMenu extends State<AnimalsMenu>{
               ),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 10,horizontal: 50),
-                child: Text("¿ya conoces con que tipo de amigo eres compatible? porfavor seleccionalo!",style: TextStyle(color: Colors.black,fontFamily: "Lato",fontWeight: FontWeight.w500,fontSize: 17),textAlign: TextAlign.center,),
+                child: Text("¿Conoces con que tipo de amigo eres compatible? Por favor seleccionalo!",style: TextStyle(color: Colors.black,fontFamily: "Lato",fontWeight: FontWeight.w500,fontSize: 17),textAlign: TextAlign.center,),
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
@@ -61,7 +61,7 @@ class _AnimalsMenu extends State<AnimalsMenu>{
                               builder: (BuildContext context)=>CupertinoAlertDialog(
                             
                                 title: Text("Bienvenido"),
-                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                content: Text("¡Hola! Antes de iniciar el cuestionario, te queremos recordar que debes responder a las preguntas de la forma más honesta posible, para así, aconsejarte de la mejor manera... \n Gracias"),
                                 actions: <Widget>[
                                   CupertinoDialogAction(
                       
@@ -89,7 +89,7 @@ class _AnimalsMenu extends State<AnimalsMenu>{
                               builder: (BuildContext context)=>CupertinoAlertDialog(
                             
                                 title: Text("Bienvenido"),
-                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                content: Text("¡Hola! Antes de iniciar el cuestionario, te queremos recordar que debes responder a las preguntas de la forma más honesta posible, para así, aconsejarte de la mejor manera... \n Gracias"),
                                 actions: <Widget>[
                                   CupertinoDialogAction(
                       
@@ -121,7 +121,7 @@ class _AnimalsMenu extends State<AnimalsMenu>{
                               builder: (BuildContext context)=>CupertinoAlertDialog(
                             
                                 title: Text("Bienvenido"),
-                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                content: Text("¡Hola! Antes de iniciar el cuestionario, te queremos recordar que debes responder a las preguntas de la forma más honesta posible, para así, aconsejarte de la mejor manera... \n Gracias"),
                                 actions: <Widget>[
                                   CupertinoDialogAction(
                       
@@ -149,7 +149,7 @@ class _AnimalsMenu extends State<AnimalsMenu>{
                               builder: (BuildContext context)=>CupertinoAlertDialog(
                             
                                 title: Text("Bienvenido"),
-                                content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                                content: Text("¡Hola! Antes de iniciar el cuestionario, te queremos recordar que debes responder a las preguntas de la forma más honesta posible, para así, aconsejarte de la mejor manera... \n Gracias"),
                                 actions: <Widget>[
                                   CupertinoDialogAction(
                       
@@ -158,7 +158,7 @@ class _AnimalsMenu extends State<AnimalsMenu>{
                                   onPressed: (){
                                       questions=[];
                                      setState(() {
-                                        animalBloc.createdQuestionsBirds().then((value){
+                                        animalBloc.createdQuestionsReptiles().then((value){
                                           print(value);
                                           questions.addAll(value);
                                         });

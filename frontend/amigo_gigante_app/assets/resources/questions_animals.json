@@ -255,6 +255,82 @@
 
         } 
 
+    },
+    "reptiles":{
+        "questions":{
+            "1":"Nuestros amigos reptiles son de diferentes tamaños ¿De qué tamaño te gustaría su amigo?  ",
+            "2":"Un reptil puede tomar un costo adicional con terrario, comida, ropa de cama, etc. De 1,000.000 COP. Teniendo en cuenta esto, seleccione el rango de presupuesto anual más acorde a su estabilidad financiera.",
+            "3":"Algunos de nuestros amigos reptiles tienen extremidades y otros no. ¿Cuál es tu preferencia?",
+            "4":"Nuestros amigos reptiles se clasifican como lagartos (Saurios), serpientes (ofidios) y tortugas (quelonios). ¿Alguna preferencia?",
+            "5":"Algunos reptiles pueden ser muy peligrosos, ¿Hasta qué nivel de peligro podrías aceptar?"
+        },
+        "answers":{
+            "1":[
+                "a. Grande",
+                "b. Mediano",
+                "c. Pequeño",
+                "d. Sin Preferencia"
+            ],
+            "2":[
+                "a. 1 MILLON DE PESOS COLOMBIANOS",
+                "b. 2 MILLONES 500 MIL PESOS COLOMBIANOS",
+                "c. 4 MILLONES DE PESOS COLOMBIANOS",
+                "d. sin importancia"
+            ],
+            "3":[
+                "True ",
+                "False "
+         
+            ],
+            "4":[
+                "a. Saurios - saurios",
+                "b. Ofidios - ofidios",
+                "c. Quelonios- quelonios",
+                "d. Sin preferencia- sinpreferencia"
+            ],
+            
+            "5":[
+                "a. Dócil - nadapeligroso",
+                "b. 2 – Normal- nopeligroso",
+                "c. 3 – Peligroso- peligroso",
+                "d. 4 – Muy peligroso- muypeligroso"
+            ]
+            
+        },
+        "weight":{
+            "1":[
+                "{\"size\":\"grande\"}",
+                "{\"size\":\"mediano\"}",
+                "{\"size\":\"pequeño\"}",
+                "{\"size\":\"sinimportancia\"}"
+                
+            ],
+            "2":[
+                "{\"maintenance\":1000000}",
+                "{\"maintenance\":2000000}",
+                "{\"maintenance\":4000000}",
+                "{\"maintenance\":0}"
+            ],
+            "3":[
+                "{\"extremities\":true}",
+                "{\"extremities\":false}"
+               
+            ],
+            "4":[
+                "{\"type\":\"saurios\"}",
+                "{\"type\":\"ofidios\"}",
+                "{\"type\":\"quelonios\"}",
+                "{\"type\":\"sinpreferencia\"}"
+            ],
+            "5":[
+                "{\"danger\":\"nopeligroso\"}",
+                "{\"danger\":\"medianamentepeligroso\"}",
+                "{\"danger\":\"peligroso\"}",
+                "{\"danger\":\"muypeligroso\"}"
+            ]
+        
+        }   
+        
     }
     
 }

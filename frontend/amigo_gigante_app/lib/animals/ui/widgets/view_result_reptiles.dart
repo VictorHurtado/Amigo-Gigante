@@ -1,6 +1,7 @@
 import 'package:amigo_gigante_app/animals/model/animal.dart';
 import 'package:amigo_gigante_app/animals/ui/widgets/bird_card.dart';
 import 'package:amigo_gigante_app/animals/ui/widgets/dog_card.dart';
+import 'package:amigo_gigante_app/animals/ui/widgets/reptile_card.dart';
 import 'package:flutter/material.dart';
 
 class ViewResultsReptiles extends StatelessWidget{
@@ -68,7 +69,7 @@ class ViewResultsReptiles extends StatelessWidget{
                   
                     (BuildContext context, int index){
                     
-                      return Container(margin: EdgeInsets.only(top:30,bottom:30),child:BirdCard(bird: animals[index]));
+                      return Container(margin: EdgeInsets.only(top:30,bottom:30),child:ReptileCard(reptile: animals[index]));
                     },
                     childCount: animals.length,             
                   )),

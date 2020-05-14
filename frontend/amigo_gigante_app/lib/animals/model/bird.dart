@@ -21,7 +21,11 @@ class Bird extends Animal{
     }
     String getNmatch(){
       return '${this.nMatch}';
+
     }
+    String getImg(){
+    return '${this.img}';
+  }
   factory Bird.fromJson(Map<String,dynamic> parsedJson){
       
       return new Bird(

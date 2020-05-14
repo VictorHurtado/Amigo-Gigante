@@ -14,4 +14,7 @@ class Animal {
   String getNmatch(){
     return '';
   }
+  String getImg(){
+    return '';
+  }
 }

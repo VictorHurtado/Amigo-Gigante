@@ -1,7 +1,7 @@
 
 
 import 'package:amigo_gigante_app/animals/model/bird.dart';
-import 'package:amigo_gigante_app/animals/model/cat.dart';
+
 
 
 

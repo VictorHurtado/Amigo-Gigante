@@ -8,8 +8,49 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class ResultsSpecies extends StatelessWidget{
   final String title;
+  String textDogs='''De acuerdo con el sistema, eres muy compatible con los caninos.
+  Nos alegramos mucho de que puedas ser parte de este proyecto y que la especie que mejor
+  se lleve contigo sean los perros. Esperamos puedas encontrar uno de estos amiguitos y lo lleves contigo a casa.
+  
+  Eres una persona que aprecia más un amigo amoroso, el cual que pueda ser fiel siempre a ti y a tu familia. 
+  Al ser una mascota tan dependiente, deberás disponer de espacio y tiempo para pasar con tu amigo,
+  ya que eso es totalmente indispensable para tener un acompañante como lo es un canino. Ya que siempre debes
+  sacarlo a pasear, jugar con él, entre otras cosas.
 
-  const ResultsSpecies({Key key, this.title});
+  ¡Gracias por usar nuestra aplicación y ser parte de las personas que somos amigos de los animales!''';
+  
+  String textCats='''Gato: De acuerdo con el sistema, eres muy compatible con los felinos puesto que eres
+  adecuado para recibir de la compañía de estos amigos, junto con todo el afecto que brindan. Nos alegramos
+  mucho que tengas el espacio para adoptar uno de estos amiguitos, y puedas recibir la compañía de ellos.
+
+  Si eres una persona muy ocupada, no te preocupes puesto que estos amiguitos son totalmente autónomos y 
+  muy aseados, aunque recuerda que al principio deberás jugar mucho con ellos. Aún así, trata de pasar el 
+  mayor tiempo que puedas con estos felinos.
+
+ ¡Gracias por usar nuestra aplicación y ser parte de las personas que somos amigos de los animales!
+  ''';
+  String textBirds='''
+  De acuerdo con el sistema, eres muy compatible con las aves. Aprecias de un amigo bastante inteligente y
+   que sea super independiente, sino tienes espacio para tener una mascota no te preocupes. Puesto que las
+    aves son totalmente independientes, aunque obviamente deberás alimentarlas varias veces al día.
+
+  Además, la mayoría de aves tienen el tamaño adecuado para ti. Y si tienes planes a corto plazo, no te preocupes,
+  siempre podrás dejarlos libres. 
+
+  ¡Gracias por usar nuestra aplicación y ser parte de las personas que somos amigos de los animales!
+  ''';
+  String textReptiles='''
+  De acuerdo con el sistema, eres muy compatible con los reptiles. Busca en tu compañero una belleza y excentricidad
+  mayor que en otros animales. Si no ocupas de mucho espacio no te preocupes,  puesto que estos animales con tener
+  un hábitat propia bastará.
+
+  El tamaño de estos animales son adecuados para ti, puesto que no son muy grandes a excepción de la iguana. A Pesar
+  de que son unos animales a los cuales no deberás dedicarle gran cantidad de horas, sí debes darle el alimento tu mismo.
+
+  ¡Gracias por usar nuestra aplicación y ser parte de las personas que somos amigos de los 
+  ''';
+
+  ResultsSpecies({Key key, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +58,7 @@ class ResultsSpecies extends StatelessWidget{
     double height= MediaQuery.of(context).size.height;
     SpeciesBloc speciesBloc = BlocProvider.of(context);
     List<num> porcents;
+    double mayor=0;
     // TODO: implement build
     return Scaffold(
       body: Stack(
@@ -64,6 +106,7 @@ class ResultsSpecies extends StatelessWidget{
                 ));
               }
               porcents=speciesBloc.toDouble(snapshot.data);
+              for (var item in porcents) {item>mayor?mayor=(item.toDouble()):mayor=mayor;}
               return Column(
                 children: <Widget>[
                   Row(
@@ -117,7 +160,7 @@ class ResultsSpecies extends StatelessWidget{
                   Container(
                     width: width,
                     height: height-200,
-                    margin: EdgeInsets.only(),
+                    padding: EdgeInsets.only(top:50),
                     decoration: BoxDecoration(
                       color:Colors.white,
                       borderRadius: BorderRadius.only(topLeft: Radius.circular(150)),
@@ -129,14 +172,15 @@ class ResultsSpecies extends StatelessWidget{
                         ),
                       ]
                     ),
-                    child: Column(
+                    child: ListView(
+                      
                       children: <Widget>[
                         Container(
                           height: 200,
                           padding: EdgeInsets.only(
-                            left: 80,
-                            right: 20,
-                            top: 80
+                            left: 50,
+                            right: 30,
+                            top: 10
 
                           ),
                           child: Text(
@@ -147,8 +191,34 @@ class ResultsSpecies extends StatelessWidget{
                         Container(
                           width: 300,
                           height: 300,
+                          padding: EdgeInsets.only(
+                            left: 50,
+                            right: 60,
+                          
+
+                          ),
+             
                           child: DonnutChart(porcents: porcents,),
+                        ),
+                        
+                        Container(
+                          width: 300,
+                           padding: EdgeInsets.only(
+                              left: 50,
+                              right: 30,
+                              top: 80,
+                              bottom: 50
+
+
+                          ),
+                          child: Text(
+                            porcents.indexOf(mayor)==0?textDogs:porcents.indexOf(mayor)==1?textCats:porcents.indexOf(mayor)==2?textBirds:porcents.indexOf(mayor)==1?textReptiles:'',
+                            style: TextStyle(fontFamily: "Lato",fontWeight: FontWeight.w100,color:Colors.black,fontSize: 18),
+                            textAlign: TextAlign.justify,
+                          ),
                         )
+
+                        
                       ], 
                     )
                   )

@@ -21,6 +21,9 @@ class Dog extends Animal{
     String getNmatch(){
       return '${this.nMatch}';
     }
+     String getImg(){
+    return '${this.img}';
+  }
     factory Dog.fromJson(Map<String,dynamic> parsedJson){
       return new Dog(
         name: parsedJson['name'],

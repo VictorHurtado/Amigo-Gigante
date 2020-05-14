@@ -1,6 +1,7 @@
-import 'package:amigo_gigante_app/animals/bloc/animals_bloc.dart';
+
 import 'package:amigo_gigante_app/animals/ui/screens/animals_menu.dart';
-import 'package:amigo_gigante_app/animals/ui/screens/questionnaire_dogs.dart';
+import 'package:amigo_gigante_app/animals/ui/screens/general_information.dart';
+
 import 'package:amigo_gigante_app/species/bloc/species_bloc.dart';
 import 'package:amigo_gigante_app/species/model/question.dart';
 import 'package:amigo_gigante_app/species/ui/screen/questionnaire_species.dart';
@@ -65,7 +66,7 @@ class _HomePageApp extends State<HomePageApp>{
                       builder: (BuildContext context)=>CupertinoAlertDialog(
                           
                           title: Text("Bienvenido"),
-                          content: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+                          content: Text("¡Hola! Antes de iniciar el cuestionario, te queremos recordar que debes responder a las preguntas de la forma más honesta posible, para así, aconsejarte de la mejor manera... \n Gracias"),
                           actions: <Widget>[
                             CupertinoDialogAction(
                 
@@ -88,7 +89,11 @@ class _HomePageApp extends State<HomePageApp>{
                       Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>AnimalsMenu()) ),
                   
                   }),
-                  BlueButtonInk(text: "Consulta Informacion", onPressed: ()=>{},width: 250,),
+                  BlueButtonInk(text: "Consulta de Informacion", onPressed: ()=>{
+                    
+                      Navigator.push(context,MaterialPageRoute(builder: (BuildContext context)=>GeneralInformation()) ),
+                  
+                  },width: 250,),
                   BannerFundation(),
 
               ],

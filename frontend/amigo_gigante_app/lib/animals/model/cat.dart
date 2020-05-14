@@ -18,6 +18,9 @@ class Cat extends Animal{
     String getNmatch(){
       return '${this.nMatch}';
     }
+     String getImg(){
+    return '${this.img}';
+  }
   factory Cat.fromJson(Map<String,dynamic> parsedJson){
         var personalityFromJson =parsedJson["personality"];
       List<String> personality =List<String>.from(personalityFromJson);

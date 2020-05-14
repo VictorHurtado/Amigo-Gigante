@@ -5,6 +5,7 @@ import 'package:amigo_gigante_app/animals/model/bird.dart';
 import 'package:amigo_gigante_app/animals/model/cat.dart';
 import 'package:amigo_gigante_app/animals/model/dog.dart';
 import 'package:amigo_gigante_app/animals/model/reptile.dart';
+import 'package:amigo_gigante_app/animals/repository/extract_animal_responses_repository.dart';
 import 'package:amigo_gigante_app/animals/repository/extract_questions_animals_repository.dart';
 import 'package:amigo_gigante_app/animals/repository/send_animal_responses_repository.dart';
 import 'package:amigo_gigante_app/species/model/question.dart';
@@ -14,6 +15,7 @@ import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 class AnimalBloc extends Bloc{
   final _extract_questions_repository= ExtractQuestionsAnimalRepository();
   final _send_animal_responses_repository= SendResponsesAnimalRepository();
+  final _extract_animal_repository=ExtractAnimalRepository();
   
   var responsesDogs=Map();
   var responsesCats=Map();
@@ -152,7 +154,7 @@ class AnimalBloc extends Bloc{
     for (var i = 1; i < keysList.length+1; i++) {
       questions.add(Question.fromJson(_jsonDecode['reptiles'], i));
     }
-    print(questions);
+    print(questions[0].description);
     return questions;
   }
    void saveQuestionReptiles(String indexView,String response,String weightQuestion){ 
@@ -160,7 +162,7 @@ class AnimalBloc extends Bloc{
     var myResponse={
       indexView: [response,weightQuestion]
     };
-    responsesBirds.addAll(myResponse);
+    responsesReptiles.addAll(myResponse);
     print("asi quedo el map: $responsesReptiles");
   }
     Future<String> recomendReptile()async{
@@ -181,6 +183,38 @@ class AnimalBloc extends Bloc{
     return animals;
   }
   
+  Future<List<Animal>> extractAnimals()async{
+    var dogs;
+    var cats;
+    var birds;
+    var reptiles;
+    List<Animal> animals=[];
+    var total_dogs= await _extract_animal_repository.extractDogsRepository();
+    var total_cats= await _extract_animal_repository.extractCatsRepository();
+    var total_birds= await _extract_animal_repository.extractBirdsRepository();
+    var total_reptiles= await _extract_animal_repository.extractReptilesRepository();
+    dogs=json.decode(total_dogs.body);
+   
+    cats=json.decode(total_cats.body);
+    birds=json.decode(total_birds.body);
+    reptiles=json.decode(total_reptiles.body);
+    for (var item in dogs['totalDogs']) {
+      
+      animals.add(Dog.fromJson(item));
+    }
+    for (var item in cats['totalCats']) {
+      animals.add(Cat.fromJson(item));
+    }
+    for (var item in birds['totalBirds']) {
+      animals.add(Bird.fromJson(item));
+    }
+    for (var item in reptiles['totalReptiles']) {
+      animals.add(Reptile.fromJson(item));
+    }
+     await Future.delayed(Duration(seconds:2));
+    print(animals);
+    return animals;
+  }
   
 
     @override

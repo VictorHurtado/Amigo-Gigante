@@ -4,6 +4,7 @@ import 'package:amigo_gigante_app/animals/ui/widgets/view_result_birds.dart';
 import 'package:amigo_gigante_app/animals/ui/widgets/view_result_cats.dart';
 
 import 'package:amigo_gigante_app/animals/ui/widgets/view_result_dogs.dart';
+import 'package:amigo_gigante_app/animals/ui/widgets/view_result_reptiles.dart';
 
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
@@ -74,7 +75,7 @@ class ResultsAnimals extends StatelessWidget{
               }else if(type=="birds"){
                 return ViewResultsBirds(animals: animals);
               }else if(type=="reptiles"){
-                
+                return ViewResultsReptiles(animals: animals);
               }
              
             }, 
