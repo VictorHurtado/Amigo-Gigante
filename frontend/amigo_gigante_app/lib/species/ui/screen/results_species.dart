@@ -100,7 +100,7 @@ class ResultsSpecies extends StatelessWidget{
                         vertical: 30,
                         horizontal: 30
                       ),
-                      child: Text("Estamos Analizando Tus Respuestas, Esto podria tardar unos minutos",style: TextStyle(fontFamily: "Lato",fontWeight: FontWeight.w600),textAlign: TextAlign.center,),
+                      child: Text("Estamos analizando tus respuestas. Esto podría tardar unos minutos.",style: TextStyle(fontFamily: "Lato",fontWeight: FontWeight.w600),textAlign: TextAlign.center,),
                     )
                   ],
                 ));
@@ -184,7 +184,7 @@ class ResultsSpecies extends StatelessWidget{
 
                           ),
                           child: Text(
-                          "Luego de analizar las distintas respuestas que nos proporcionaste, podemos decir que eres compatible con...",
+                          "Luego de analizar las distintas respuestas que nos proporcionaste, podemos decir que eres compatible con los siguientes animales.",
                           style: TextStyle(fontFamily: "Lato",fontWeight: FontWeight.w100,color:Colors.black,fontSize: 20),
                           ),
                         ),

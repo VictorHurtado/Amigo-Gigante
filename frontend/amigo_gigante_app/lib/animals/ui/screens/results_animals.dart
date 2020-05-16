@@ -28,7 +28,7 @@ class ResultsAnimals extends StatelessWidget{
             future: type=="dogs"? animalBloc.recomendDog():type=="cats"?animalBloc.recomendCat():type=="birds"?animalBloc.recomendBird():type=="reptiles"?animalBloc.recomendReptile():'',
             builder:(context,AsyncSnapshot<String> snapshot){
               if(snapshot.hasError){
-                return Center(child: Text('Ocurrio algo inesperado, por favor intentelo de nuevo'));
+                return Center(child: Text('Ocurrió algo inesperado, por favor intentelo de nuevo'));
               }
               if(!snapshot.hasData){
                 return Center(child: Column(
@@ -60,7 +60,7 @@ class ResultsAnimals extends StatelessWidget{
                         vertical: 30,
                         horizontal: 30
                       ),
-                      child: Text("Estamos analizando tus respuestas, esto podria tardar unos minutos",style: TextStyle(fontFamily: "Lato",fontWeight: FontWeight.w600),textAlign: TextAlign.center,),
+                      child: Text("Estamos analizando tus respuestas, esto podría tardar unos minutos",style: TextStyle(fontFamily: "Lato",fontWeight: FontWeight.w600),textAlign: TextAlign.center,),
                     )
                   ],
                 ));

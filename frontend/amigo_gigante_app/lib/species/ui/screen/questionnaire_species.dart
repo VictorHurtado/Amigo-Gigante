@@ -108,12 +108,12 @@ class _QuestionnarieSpice extends State<QuestionnaireSpecies>{
                     
                       padding: EdgeInsets.all(30),
                       
-                      child: Text("Terminaste el cuestionario si estas seguro de pulsa terminar",style:TextStyle(fontFamily: "Lato",fontSize: 23,),textAlign:TextAlign.center),
+                      child: Text("Terminaste el cuestionario. Si estás seguro de pulsa terminar.",style:TextStyle(fontFamily: "Lato",fontSize: 23,),textAlign:TextAlign.center),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        BlueCircularButton(text: "atras", onPressed: (){
+                        BlueCircularButton(text: "Atrás", onPressed: (){
                         back();
                         
                         },width: 130,),

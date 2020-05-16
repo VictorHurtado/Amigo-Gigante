@@ -20,10 +20,10 @@ class _DonnutChart extends State<DonnutChart>{
 
   _generateData(List<num> array){
     var pieData=[
-      new Species('Perros', array[0],Color.fromRGBO(45, 235, 237, 1)),
-      new Species('Gatos', array[1],Color.fromRGBO(100, 235, 247, 0.5)),
-      new Species('Aves', array[2],Color.fromRGBO(145, 255, 237, 1)),
-      new Species('Reptiles', array[3],Color.fromRGBO(255, 235, 237, 1)),
+      new Species('Perros', array[0],Color.fromRGBO(57, 57, 58, 0.5)),
+      new Species('Gatos', array[1],Color.fromRGBO(0, 157, 220, 1)),
+      new Species('Aves', array[2],Color.fromRGBO(0, 155, 114, 0.7)),
+      new Species('Reptiles', array[3],Color.fromRGBO(41, 115, 115, 0.5)),
 
     ];
     _seriesPieData.add(

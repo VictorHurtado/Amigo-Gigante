@@ -3,9 +3,9 @@
         "1":"¿Para qué deseas adoptar uno de nuestros amigos?",
         "2":"¿Dispones de espacio para brindarle comodidad a tu nuevo amigo?",
         "3":"¿Dispones de tiempo? ¡Recuerda que es muy importante compartir!",
-        "4":"¿Tienes algunos planes a largo plazo? debes tener en cuenta que si tu respuesta es negativa significa que tus planes son a muy corto plazo ( - 3 años).",
-        "5":"Esta pregunta es un poco incómoda para nosotros, pero ¿Cuentas con recursos económicos?",
-        "6":"¿Como te gustaria un acompañante?",
+        "4":"¿Tienes algunos planes a largo plazo? Debes tener en cuenta que si tu respuesta es negativa significa que tus planes son a muy corto plazo ( - 3 años).",
+        "5":"Esta pregunta es un poco incómoda para nosotros, pero, ¿cuentas con recursos económicos?",
+        "6":"¿Cómo te gustaria un acompañante?",
         "7":"¿Tu compañero debería ser...?"
     },
     "answers":{
@@ -16,11 +16,11 @@
             "d. Belleza y excéntrico"
         ],
         "2":[
-            "Si",
+            "Sí",
             "No"    
         ],
         "3":[
-            "Si",
+            "Sí",
             "No"  
         ],
         "4":[
@@ -28,7 +28,7 @@
             "Planes a corto plazo"  
         ],
         "5":[
-            "Solvencia Economica",
+            "Solvencia Económica",
             "Poca solvencia"  
         ],
         "6":[
@@ -37,7 +37,7 @@
         ],
         "7":[
             "Dependiente",
-            "autonomo"
+            "Autónomo"
         ]
 
     },

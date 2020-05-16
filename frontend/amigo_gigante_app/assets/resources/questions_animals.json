@@ -18,7 +18,7 @@
                 "d.  Pequeño"
             ],
             "2":[
-                "a. Poco",
+                "a.  Poco",
                 "b.  Normal",
                 "c.  Abundante",
                 "d.  Muy abundante"
@@ -31,45 +31,45 @@
                 "a.  1 MILLON 500 MIL PESOS COLOMBIANOS",
                 "b.  3 MILLONES PESOS COLOMBIANOS",
                 "c.  5 MILLONES PESOS COLOMBIANOS",
-                "d.  no tiene importancia"
+                "d.  Sin importancia"
             ],
             "5":[
-                "a. true",
-                "b. false"    
+                "Sí",
+                "No"    
             ],
             "6":[
-                "a. Tranquilos",
-                "b. Enérgicos"
+                "Tranquilos",
+                "Enérgicos"
             ],
             "7":[
-                "a.  edad (0 años o menos)",
-                "b.  edad (1 años – 2 años)",
-                "c.  edad (2 años – 5 años)",
+                "a.  Edad (0 años o menos)",
+                "b.  Edad (1 años – 2 años)",
+                "c.  Edad (2 años – 5 años)",
                 "d.  (5 años o más)"
             ],
             "8":[
                 "a. Raza",
                 "b. Criollo",
                 "c. Enrazado",
-                "d. No importa"
+                "d. Sin importancia"
             ]
         },
         "weight":{
             "1":[
-                "{\"size\":\"muygrande\"}",
-                "{\"size\":\"grande\"}",
-                "{\"size\":\"mediano\"}",
-                "{\"size\":\"pequeño\"}"
+                "{\"size\":\"Muy grande\"}",
+                "{\"size\":\"Grande\"}",
+                "{\"size\":\"Mediano\"}",
+                "{\"size\":\"Pequeño\"}"
             ],
             "2":[
-                "{\"fur\":\"poco\"}",
-                "{\"fur\":\"normal\"}",
-                "{\"fur\":\"abundante\"}",
-                "{\"fur\":\"muyabundante\"}"
+                "{\"fur\":\"Poco\"}",
+                "{\"fur\":\"Normal\"}",
+                "{\"fur\":\"Abundante\"}",
+                "{\"fur\":\"Muy abundante\"}"
             ],
             "3":[
-                "{\"docility\":\"docil\"}",
-                "{\"docility\":\"agresivo\"}"
+                "{\"docility\":\"Dócil\"}",
+                "{\"docility\":\"Agresivo\"}"
             ],
             "4":[
                 "{\"maintenance\":1500000}",
@@ -86,16 +86,16 @@
                 "{\"energy\":true}"
             ],
             "7":[
-                "{\"age\":\"cachorro\"}",
-                "{\"age\":\"adulto\"}",
-                "{\"age\":\"adulto\"}",
-                "{\"age\":\"adultomayor\"}"
+                "{\"age\":\"Cachorro\"}",
+                "{\"age\":\"Adulto\"}",
+                "{\"age\":\"Adulto\"}",
+                "{\"age\":\"Adulto Mayor\"}"
             ],
             "8":[
-                "{\"raza\":\"raza\"}",
-                "{\"raza\":\"criollo\"}",
-                "{\"raza\":\"enrazado\"}",
-                "{\"raza\":\"sinimportancia\"}"
+                "{\"raza\":\"Raza\"}",
+                "{\"raza\":\"Criollo\"}",
+                "{\"raza\":\"Enrazado\"}",
+                "{\"raza\":\"Sin importancia\"}"
             ]
 
         }
@@ -105,9 +105,9 @@
         "questions":{
             "1":"Nuestros amigos felinos tienen una gran variedad de pelaje, ¿cómo te gustaría el pelaje de tu amigo? ",
             "2":"Los gatos pueden tener un costo anual entre vacunas, juguetes, etc. Teniendo en cuenta esto, seleccione el rango de presupuesto anual más acorde a su estabilidad financiera.",
-            "3":"Tenemos amiguitos deiferentes edades, desde crías hasta ya desarrollados. ¿Cómo te gustaría?",
+            "3":"Tenemos amiguitos deiferentes edades, desde crías hasta ya desarrollados ¿Cómo te gustaría?",
             "4":"Nuestros amigos tienen diferentes personalidades, desde muy tranquilos, mimados o inquietos, ¿cómo prefiere usted?",
-            "5":"Nuestros amiguitos son de raza y otros son criollos, ¿Tiene usted alguna preferencia?"
+            "5":"Nuestros amiguitos son de raza y otros son criollos, ¿tiene usted alguna preferencia?"
         },
         "answers":{
             "1":[
@@ -120,34 +120,34 @@
                 "a. 1 MILLON DE PESOS COLOMBIANOS",
                 "b. 2 MILLONES 500 MIL PESOS COLOMBIANOS",
                 "c. 5 MILLONES DE PESOS COLOMBIANOS",
-                "d. sin importancia"
+                "d. Sin importancia"
             ],
             "3":[
-                "a. edad (0 años o menos)",
-                "b. edad (1 años – 2 años)",
-                "c. edad (2 años – 5 años)",
+                "a. Edad (0 años o menos)",
+                "b. Edad (1 años – 2 años)",
+                "c. Edad (2 años – 5 años)",
                 "d. (5 años o más)"
             ],
             "4":[
                 "a. Cariñoso",
                 "b. Tranquilo",
                 "c. Juguetón",
-                "d. agresivo "
+                "d. Agresivo "
             ],
             "5":[
                 "a. Raza",
                 "b. Criollos",
                 "c. Enrazado" ,
-                "d. No importa"
+                "d. Sin importancia"
             ]
             
         },
         "weight":{
             "1":[
-                "{\"fur\":\"poco\"}",
-                "{\"fur\":\"normal\"}",
-                "{\"fur\":\"abundante\"}",
-                "{\"fur\":\"muyabundante\"}"
+                "{\"fur\":\"Poco\"}",
+                "{\"fur\":\"Normal\"}",
+                "{\"fur\":\"Abundante\"}",
+                "{\"fur\":\"Muy abundante\"}"
             ],
             "2":[
                 "{\"maintenance\":1500000}",
@@ -156,24 +156,24 @@
                 "{\"maintenance\":0}"
             ],
             "3":[
-                "{\"age\":\"cachorro\"}",
-                "{\"age\":\"adulto\"}",
-                "{\"age\":\"adulto\"}",
-                "{\"age\":\"adultomayor\"}"
+                "{\"age\":\"Cachorro\"}",
+                "{\"age\":\"Adulto\"}",
+                "{\"age\":\"Adulto\"}",
+                "{\"age\":\"Adulto mayor\"}"
             ],
             "4":[
-                "{\"personality\":\"cariñoso\"}",
-                "{\"personality\":\"tranquilo\"}",
-                "{\"personality\":\"jugueton\"}",
-                "{\"personality\":\"agresivo\"}"
+                "{\"personality\":\"Cariñoso\"}",
+                "{\"personality\":\"Tranquilo\"}",
+                "{\"personality\":\"Jugueton\"}",
+                "{\"personality\":\"Agresivo\"}"
             ],
             
             
             "5":[
-                "{\"raza\":\"raza\"}",
-                "{\"raza\":\"criollo\"}",
-                "{\"raza\":\"enrazado\"}",
-                "{\"raza\":\"sinimportancia\"}"
+                "{\"raza\":\"Raza\"}",
+                "{\"raza\":\"Criollo\"}",
+                "{\"raza\":\"Enrazado\"}",
+                "{\"raza\":\"Sin importancia\"}"
             ]
 
         } 
@@ -196,13 +196,13 @@
             ],
             
             "2":[
-                "True",
-                "False"
+                "Sí",
+                "No"
            
             ],
             "3":[
-                "True ",
-                "False "
+                "Sí ",
+                "No "
          
             ],
             "4":[
@@ -215,16 +215,16 @@
                 "a. 1 MILLON DE PESOS COLOMBIANOS",
                 "b. 2 MILLONES 500 MIL PESOS COLOMBIANOS",
                 "c. 4 MILLONES DE PESOS COLOMBIANOS",
-                "d. sin importancia"
+                "d. Sin importancia"
             ]
             
         },
          "weight":{
             "1":[
-                "{\"size\":\"grande\"}",
-                "{\"size\":\"mediano\"}",
-                "{\"size\":\"pequeño\"}",
-                "{\"size\":\"muypequeño\"}"
+                "{\"size\":\"Grande\"}",
+                "{\"size\":\"Mediano\"}",
+                "{\"size\":\"Pequeño\"}",
+                "{\"size\":\"Muy pequeño\"}"
                 
             ],
             
@@ -240,10 +240,10 @@
             ],
             
             "4":[
-                "{\"color\":\"policolor\"}",
-                "{\"color\":\"pocoscolores\"}",
-                "{\"color\":\"unicolor\"}",
-                "{\"color\":\"sinpreferencia\"}"
+                "{\"color\":\"Policolor\"}",
+                "{\"color\":\"Pocos colores\"}",
+                "{\"color\":\"Unicolor\"}",
+                "{\"color\":\"Sin preferencia\"}"
             ],
             
             "5":[
@@ -278,32 +278,32 @@
                 "d. sin importancia"
             ],
             "3":[
-                "True ",
-                "False "
+                "Sí",
+                "No "
          
             ],
             "4":[
-                "a. Saurios - saurios",
-                "b. Ofidios - ofidios",
-                "c. Quelonios- quelonios",
-                "d. Sin preferencia- sinpreferencia"
+                "a. Saurios",
+                "b. Ofidios",
+                "c. Quelonios",
+                "d. Sin preferencia"
             ],
             
             "5":[
-                "a. Dócil - nadapeligroso",
-                "b. 2 – Normal- nopeligroso",
-                "c. 3 – Peligroso- peligroso",
-                "d. 4 – Muy peligroso- muypeligroso"
+                "a. Dócil",
+                "b. 2 – Normal",
+                "c. 3 – Peligroso",
+                "d. 4 – Muy peligroso"
             ]
             
         },
         "weight":{
             "1":[
-                "{\"size\":\"grande\"}",
-                "{\"size\":\"mediano\"}",
-                "{\"size\":\"pequeño\"}",
-                "{\"size\":\"sinimportancia\"}"
-                
+                "{\"size\":\"Grande\"}",
+                "{\"size\":\"Mediano\"}",
+                "{\"size\":\"Pequeño\"}",
+                "{\"size\":\"Sin importancia\"}"
+                 
             ],
             "2":[
                 "{\"maintenance\":1000000}",
@@ -320,13 +320,13 @@
                 "{\"type\":\"saurios\"}",
                 "{\"type\":\"ofidios\"}",
                 "{\"type\":\"quelonios\"}",
-                "{\"type\":\"sinpreferencia\"}"
+                "{\"type\":\"Sin preferencia\"}"
             ],
             "5":[
-                "{\"danger\":\"nopeligroso\"}",
-                "{\"danger\":\"medianamentepeligroso\"}",
-                "{\"danger\":\"peligroso\"}",
-                "{\"danger\":\"muypeligroso\"}"
+                "{\"danger\":\"No peligroso\"}",
+                "{\"danger\":\"Medianamente peligroso\"}",
+                "{\"danger\":\"Peligroso\"}",
+                "{\"danger\":\"Muy peligroso\"}"
             ]
         
         }   
