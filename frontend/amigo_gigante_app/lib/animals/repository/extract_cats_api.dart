@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 class ExtractCatsAPI {
 
    Future<http.Response> extractCatsApi( )async{
-    String url= "http://192.168.0.15:4000/api/cats/extractCats";
+    String url= "http://192.168.0.26:4000/api/cats/extractCats";
   
     http.Response respHttp= await http.get(url);
      if (respHttp.statusCode == 200) {

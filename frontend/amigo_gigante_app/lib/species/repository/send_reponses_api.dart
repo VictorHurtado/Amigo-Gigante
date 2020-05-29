@@ -3,7 +3,7 @@
 import 'package:http/http.dart' as http;
 class SendResponsesAPI{
   Future<http.Response> sendResponsesApi(String resp)async{
-    String url= "http://192.168.0.15:4000/api/species/analyzeSpecies";
+    String url= "http://192.168.0.26:4000/api/species/analyzeSpecies";
   
     http.Response respHttp= await http.post(url,body:{"myResponses":resp});
      if (respHttp.statusCode == 200) {
